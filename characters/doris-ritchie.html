@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑底绿字页面</title>
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    background-color: #000; /* 黑底 */
+    color: #0f0; /* 绿字 */
+    font-family: "Courier New", Courier, monospace; /* 等宽字体 */
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  h1, h2 {
+    color: #0f0;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: #0f0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #0f0;
+    margin-left: 2px;
+    animation: blink 1s step-start infinite;
+    vertical-align: bottom;
+  }
+
+  @keyframes blink {
+    50% { background-color: transparent; }
+  }
+
+  .terminal {
+    max-width: 900px;
+    margin: 0 auto;
+    white-space: pre-wrap; /* 换行显示 */
+  }
+</style>
+</head>
+<body>
+
+<center>
+  <h1>Doris Ritchie</h1>
+  <p><u><b>万流之春</b></u></p>
+</center>
+<div class="terminal" id="terminal"></div><span class="cursor"></span>
+<center>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1228.png" alt="" style="max-width:800px; width:400%; cursor:pointer;"><br>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1300.gif" alt="" style="max-width:233px; width:233%; cursor:pointer;">
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1749639919708_edit_10050969144497.jpg" alt="" title="by keex"  style="max-width:200px; width:200%; cursor:pointer;">
+</center>
+<script>
+  const content = ` ★ Doris是女名吧，尽管不妨碍他是男人。
+ ★ 印象：新兴宗教计科男→机械神教玩家但机械神教在2K→新兴宗教计科后辈→天然呆天然黑参半的萌萌笨蛋计科男。（所以不变的印象只有搞笑角色和笨蛋……）
+ ★ 袖子从一开始的正常尺寸逐渐变成了萌袖，不要停下来啊！（迫真）`;
+
+  const terminal = document.getElementById('terminal');
+  const cursor = document.querySelector('.cursor');
+  let index = 0;
+
+  function typeContent() {
+    if (index < content.length) {
+      const char = content.charAt(index);
+      terminal.innerHTML += char;
+      index++;
+      setTimeout(typeContent, 50); // 每个字符间隔，越小越快
+      terminal.scrollTop = terminal.scrollHeight; // 自动滚动到底部
+    } else {
+      cursor.style.display = 'none'; // 打完内容隐藏光标
+    }
+  }
+
+  typeContent();
+</script>
+
+</body>
+
+<div class="footer">
+    <center>
+      <p>© All rights reserved to EclipseA　2016 - 2025</p>
+    </center>
+  </div>
+</html>
