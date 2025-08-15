@@ -1,54 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHARACTERS</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="https://gremlin.neocities.org/css/default.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHARACTERS</title>
+  <style>
+    .youtube-video { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px }
+    .youtube-video-4x3 { aspect-ratio: 4 / 3; width: 100%; box-shadow: 10px 10px }
+    .youtube-video-80 { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px }
+    .stream-4x3 { aspect-ratio: 4 / 3; box-shadow: 10px 10px }
+    .video-4x3 { aspect-ratio: 4 / 3; width: 80%; box-shadow: 10px 10px }
 
-  <body><span id=top></span>
-  
-  
-  </div>
-  
-  
-  
-  <div class=title>
-  <div class=title-text>
-  <h1>CHARACTERS</h1>
-  </div>
+    @font-face {
+      font-family: 'maidenfont';
+      src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/maiden.ttf');
+    }
+
+    #statuscafe { padding: .5em; background-color: #edeef3; }
+    #statuscafe-username { margin-bottom: .5em; }
+    #statuscafe-content { margin: 0 1em 0.5em 1em; }
+
+    body { margin: 0; padding: 0; background: #000000; line-height: 133%; font-size: 0.98em; font-family: "Open Sans", "Droid Sans", "Calibri", sans-serif; }
+    h1, h2, h3 { font-family: "Calibri"; }
+    blockquote { border-left: #9bd5e9 3px solid; background: #d4e3ec; padding: 0.1px 0.75rem; margin: 0 1.5rem; }
+    hr { width: 75%; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+    .quick-nav { position: fixed; z-index: 999; width: 100%; text-align: right; color: #fff; font-size: 0.875em; }
+    .navbar { padding: 1px 25px; }
+    .navbar a { display: inline-block; text-decoration: none; color: #ffffff; margin: 0 2px; }
+
+    .header { background: url(); }
+    .title { background: linear-gradient(#54c5eb71, #54c5eb71), url(https://gremlin.neocities.org/images/blobz.gif); min-height: px; margin-bottom: -25px; text-align: center; }
+    .title-text, .title-pic { padding:0; margin: 0; display: inline-block; vertical-align: top; }
+    .title-text { padding-right: 1em; width: calc(85vw - 110px); line-height: 167%; margin-top: -3px; padding-bottom: 15px; }
+    .title-text h1 { font-family: 'maidenfont', sans-serif;; padding:30px; font-size: 64px; }
+    .title-pic { height: 100px; margin-right: 100px; margin-top: -25px; border: 5px solid #9bd5e9; border-radius: 10px; }
+    .title-pic img { height: 100%; overflow: hidden; }
+
+    .page-wrapper { padding: 0 100px; margin: 0 auto; background: linear-gradient(#ee99a0a8, #ee99a06b), url(https://gremlin.neocities.org/images/gmcbg.gif); }
+    .sidebar { width: 320px; margin: 50px 0; position: absolute; }
+    .sidebar h1 { font-size: 1.2rem; background: #65bfdd; color: #000000; padding: 12px 10px 10px 10px; margin: auto; }
+    .sidebar a { display: block; border-left: 3px solid #54c5eb; background: #9bd5e9; padding: 5px; margin: 10px 0; color: #0e0718; text-decoration: none; box-shadow: 8px 8px #547f8d; }
+    .sidebar a:hover, .sidebar a:focus { background: #ffffff; transition: ease-in 0.1s, ease-out 0.1s; }
+    .sidebar, .main { display: inline-block; }
+
+    .main { margin: 50px 100px 50px 350px; width: calc(100vw - 550px); }
+    .box { margin-bottom: 15px; box-shadow: 10px 10px }
+    .box h1 { background: #65bfdd; color: #000000; padding: 15px 12px 12px 12px; margin: auto; box-shadow: 10px 10px #547f8d; }
+    .inner { background:  #edeef3; padding: 10px 25px; }
+    .inner img { max-width: 100%; height: auto; border-radius: 5px; }
+    .box, .title-pic img { border-radius: 5px; overflow: hidden; }
+
+    .footer { background: #000000; color: #fff; padding: 5px 20px 10px; font-size: 0.75em; }
+    .footer a { color: #fff; }
+    .footer-column { width: 25%; margin: 5px 10px; display: inline-block; vertical-align: top; }
+
+    @media(max-width: 900px) {
+      .page-wrapper { padding: 0 50px; }
+      .sidebar { width: 25vw; }
+      .main { margin: 50px 0 50px calc(25vw + 30px); width: calc(75vw - 150px); }
+      .title-pic { margin-right: 7vw; }
+      .title-text { padding-left: 1vw; padding-right: 2vw; }
+    }
+
+    @media(orientation: portrait) {
+      .page-wrapper { padding-top: 0.1px; padding-bottom: 0.1px; }
+      .sidebar, .main { display: block; margin: 0 auto; position: static; width: 100%; }
+      .sidebar { margin-top: 50px; }
+      .main { margin-top: 30px; margin-bottom: 30px; }
+    }
+
+    @media(max-width: 500px) {
+      .header { height: 60vw; }
+      .title { padding-right: 0; height: calc(auto - 25px); }
+      .title-text { margin-top: -5px; }
+      .title-text h1 { font-size: 6vw; line-height: 75%; }
+      .page-wrapper { padding: 0.1px 7vw; }
+      .footer-column { display: block; width: 100%; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="title">
+    <div class="title-text">
+      <h1>CHARACTERS</h1>
+    </div>
   </div>
   <br>
-  <div class=quick-nav></div>
-    <div class=navbar>
-    <p style="color: white;">/ <a href="https://permanent-telex.github.io/">BACK</a> /</p>
-    </div>
+  <div class="quick-nav"></div>
+  <div class="navbar">
+    <p style="color: white;"><a href="https://permanent-telex.github.io/">◀◀BACK</a></p>
   </div>
-  <div class=page-wrapper>
-  
-
-
-    </div>
-  </div>
-
- 	<br><br>
+  <div class="page-wrapper"></div>
+  <br><br>
   <center>
-      <p style="color: white;">登场角色，成员们。我想要成为人类的一份子。<br>出于容易区分的目的，仅以角色主要登场的世界观和故事作为页面内分类依据。</p>
-
+    <p style="color: white;">登场角色，成员们。我想要成为人类的一份子。<br>出于容易区分的目的，仅以角色主要登场的世界观和故事作为页面内分类依据。</p>
+  </center>
+  <br><br>
+  <div class="footer">
+    <center>
+      <p>© All rights reserved to EclipseA　2016 - 2025</p>
     </center>
-    <br><br>
-    <div class=footer>
-      <center>
-        <p>Layout by <a href="https://gremlin.nekoweb.org/home" target="_blank">gremlin.nekoweb</a></p>
-        <p>© All rights reserved to EclipseA　 2016 - 2025</p>
-      </center>
-      </div>
   </div>
-  
-  </body>
+</body>
 </html>
