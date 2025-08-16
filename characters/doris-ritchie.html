@@ -48,6 +48,35 @@
     margin: 0 auto;
     white-space: pre-wrap; /* 换行显示 */
   }
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
 </style>
 </head>
 <body>
@@ -55,13 +84,19 @@
 <center>
   <h1>Doris Ritchie</h1>
   <p><u><b>万流之春</b></u></p>
+<div class="gallery">
+  <div>
+   <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1228.png" alt="">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1300.gif" alt="">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1749639919708_edit_10050969144497.jpg" alt="" title="by keex">
+  </div>
 </center>
 <div class="terminal" id="terminal"></div><span class="cursor"></span>
-<center>
-  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1228.png" alt="" style="max-width:800px; width:400%; cursor:pointer;"><br>
-  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1300.gif" alt="" style="max-width:233px; width:233%; cursor:pointer;">
-  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1749639919708_edit_10050969144497.jpg" alt="" title="by keex"  style="max-width:200px; width:200%; cursor:pointer;">
-</center>
+
 <script>
   const content = ` ★ Doris是女名吧，尽管不妨碍他是男人。
  ★ 印象：新兴宗教计科男→机械神教玩家但机械神教在2K→新兴宗教计科后辈→天然呆天然黑参半的萌萌笨蛋计科男。（所以不变的印象只有搞笑角色和笨蛋……）
