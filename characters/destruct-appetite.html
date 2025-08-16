@@ -256,6 +256,35 @@ details td {
 /* figure float adjustment */
 figure { float: right; margin: 0.5rem 0 0 1rem; }
 @media (max-width: 800px) { figure { float: none; margin: 1rem auto; } }
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
 </style>
 </head>
 <body>
@@ -278,17 +307,25 @@ figure { float: right; margin: 0.5rem 0 0 1rem; }
 </p>
 
     </main>
-<center>
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/jtdt9i.png" alt="">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/mmexport1747189987669.jpg" alt="" style="width:300px;height:300px;">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224421_edit_561091683487573.jpg" alt="" title="by :D" style="width:300px;height:300px;"><br>
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1749456128379.png" alt="" title="by 酸甜辣没有苦" style="width:300px;height:300px;">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/79BA9C17EE61AB6E908006987D2D8752_1751172195497.we.jpg" alt="" title="by 我外卖呢？" style="width:300px;height:300px;">
-</center>
-<footer>
-<p>© All rights reserved to EclipseA　2016 - 2025</a></p>
-<p>layout by <a href="https://ribo.zone/free/layouts/">ribo.zone</a></p>
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/jtdt9i.png" alt="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/mmexport1747189987669.jpg" alt="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224421_edit_561091683487573.jpg" alt="" title="by :D">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1749456128379.png" alt="" title="by 酸甜辣没有苦">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/79BA9C17EE61AB6E908006987D2D8752_1751172195497.we.jpg" alt="" title="by 我外卖呢？">
+  </div>
+	
 		</footer>
 </div>
+
 
 </body>
