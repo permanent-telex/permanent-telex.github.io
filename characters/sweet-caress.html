@@ -256,6 +256,35 @@ details td {
 /* figure float adjustment */
 figure { float: right; margin: 0.5rem 0 0 1rem; }
 @media (max-width: 800px) { figure { float: none; margin: 1rem auto; } }
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
 </style>
 </head>
 <body>
@@ -273,11 +302,19 @@ figure { float: right; margin: 0.5rem 0 0 1rem; }
 </p>
 
     </main>
-<center>
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/QQ图片20250205210807.png" title="by 共鳴解凍（on neka）" alt="">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/sw0314.png" alt="" style="width:300px;height:300px;">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224526_edit_561422059634374.jpg" alt="" title="by :D" style="width:300px;height:300px;"><br>
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/413b452259c2a3dfe5536aba7e9996a4_1750146715037.png" alt="" title="" style="width:300px;height:300px;">
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/QQ图片20250205210807.png" title="by 共鳴解凍（on neka）" alt="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/sw0314.png" alt="">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224526_edit_561422059634374.jpg" alt="" title="by :D">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/413b452259c2a3dfe5536aba7e9996a4_1750146715037.png" alt="" title="">
+  </div>
 <footer>
 <p>© All rights reserved to EclipseA　2016 - 2025</a></p>
 <p>layout by <a href="https://ribo.zone/free/layouts/">ribo.zone</a></p>
