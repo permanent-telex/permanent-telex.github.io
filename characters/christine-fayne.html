@@ -97,6 +97,36 @@ a:hover {
     right: 20px;
     transform: rotate(6deg);
 }
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+
 </style>
 </head>
 <body>
@@ -107,7 +137,7 @@ a:hover {
 
   <div class="header">Christine Fayne</div>
 <u>被动强制</u>
-<p><img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1753419639374.jpg" alt="" style="float: right; margin: 0 20px 20px 0; width:180px;">★ 中情局的情报员，美国精神病人正统在冷战（确信）。坏得彻底坏得正大光明，某种程度上的Paranoid。捅人刀子都得多转两圈的类型。不过因为受教育约束而变成了守序邪恶人。——其实是临时改设定。<br>
+<p>★ 中情局的情报员，美国精神病人正统在冷战（确信）。坏得彻底坏得正大光明，某种程度上的Paranoid。捅人刀子都得多转两圈的类型。不过因为受教育约束而变成了守序邪恶人。——其实是临时改设定。<br>
 ★ 性癖异于常人所以是刻奇官能爱好者。谋杀是社会发展的基石是文明的必需品……便是如此。领域外的事情我暂且蒙在迷幻蘑菇里。<br>
 ★ 有个关系要好的姐姐，她是个外科医生。<br>
 ★ 喜欢Black Sabbath。嘛虽然因为改了设定所以原型也变成Judas Priest的Breaking the Law了。</p>
@@ -120,11 +150,21 @@ a:hover {
 ★ 所以这次的boss是旧卡，谁也没想到是某绝命毒师（他甚至被NPC一枪打死了！）。笔者曰：沟槽的女巫还在追我！
 
 </details>
-
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1593.png" alt="" title="by 地狱犬振空摆" style="max-width:400px; width:200%; cursor:pointer;"><img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1601.png" alt="" title="" style="max-width:480px; width:100%; cursor:pointer;">
-   <div class="footer">
-   © All rights reserved to EclipseA　2016 - 2025
+<div class="gallery">
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1753419639374.jpg" alt="">
   </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1593.png" alt="" title="by 地狱犬振空摆">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1601.png" alt="" title="">
+  </div>
+
+<footer>
+<p>© All rights reserved to EclipseA　2016 - 2025</a></p>
+</footer>
+
 </div>
 
 </body>
