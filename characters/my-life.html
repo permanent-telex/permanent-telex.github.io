@@ -256,6 +256,35 @@ details td {
 /* figure float adjustment */
 figure { float: right; margin: 0.5rem 0 0 1rem; }
 @media (max-width: 800px) { figure { float: none; margin: 1rem auto; } }
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
 </style>
 </head>
 <body>
@@ -269,15 +298,28 @@ figure { float: right; margin: 0.5rem 0 0 1rem; }
         <p><img src="https://www1.flightrising.com/rendern/350/1004271/100427050_350.png" alt="" style="float: right; margin: 0 20px 20px 0; width:300px;">★ 神秘生物，但大部分时间都是一般通过路人（说出来估计没人会信）。在五人组里存在感并不稀薄，但地位一直非常尴尬。</p>
 
     </main>
-<center>
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/mylife.png" alt="">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/72_1743770683877.png" alt="" title="by 阿阿阿阿柴">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/cotioniajos.png" alt="" title="by 阳离子"style="width:300px;height:300px;">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/72882faf15e5a05aa7db7861ce8d8425_1749813915285.png" alt="" title="by xiya" style="width:300px;height:300px;">
-<img src="https://raw.githubusercontent.com/permanent-telex/img/main/e653747813f490de73b5dbfd87516d38_1754483865768.png" alt="" title="by EA is" style="width:300px;height:300px;">
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/mylife.png" alt="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/72_1743770683877.png" alt="" title="by 阿阿阿阿柴">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/cotioniajos.png" alt="" title="by 阳离子">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/72882faf15e5a05aa7db7861ce8d8425_1749813915285.png" alt="" title="by xiya">
+  </div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/e653747813f490de73b5dbfd87516d38_1754483865768.png" alt="" title="by EA is">
+</div>
+<div>
 <img src="https://raw.githubusercontent.com/permanent-telex/img/main/6ea0ac4d9ad4be691041f375215eaa9e_1755228216257.jpg" alt="" title="by 姓啥">
+</div>
+<div>
 <img src="https://raw.githubusercontent.com/permanent-telex/img/main/18f668e2d0f59bb5ab8b9254b40da015_1755228222223.png" alt="" title="by 姓啥">
-</center>
+</div>
 <footer>
 <p>© All rights reserved to EclipseA　2016 - 2025</a></p>
 <p>layout by <a href="https://ribo.zone/free/layouts/">ribo.zone</a></p>
