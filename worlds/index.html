@@ -3,41 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WORLDS</title>
+  <title>CHARACTERS</title>
   <style>
-    .youtube-video { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px }
-    .youtube-video-4x3 { aspect-ratio: 4 / 3; width: 100%; box-shadow: 10px 10px }
-    .youtube-video-80 { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px }
-    .stream-4x3 { aspect-ratio: 4 / 3; box-shadow: 10px 10px }
-    .video-4x3 { aspect-ratio: 4 / 3; width: 80%; box-shadow: 10px 10px }
-
     @font-face {
       font-family: 'maidenfont';
       src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/maiden.ttf');
     }
 
-    #statuscafe { padding: .5em; background-color: #edeef3; }
-    #statuscafe-username { margin-bottom: .5em; }
-    #statuscafe-content { margin: 0 1em 0.5em 1em; }
+    /* 全局样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.33;
+      font-size: 0.98em;
+      font-family: "Open Sans", "Droid Sans", "Calibri", sans-serif;
+      color: #ffffff; /* 默认正文文字白色 */
+      background: #000000; /* 纯黑底色，主要是给正文 */
+    }
 
-    body { margin: 0; padding: 0; background: #000000; line-height: 133%; font-size: 0.98em; font-family: "Open Sans", "Droid Sans", "Calibri", sans-serif; }
-    h1, h2, h3 { font-family: "Calibri"; }
-    blockquote { border-left: #9bd5e9 3px solid; background: #d4e3ec; padding: 0.1px 0.75rem; margin: 0 1.5rem; }
-    hr { width: 75%; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    /* 页面顶部大标题 */
+    .title-text h1 {
+      font-family: 'maidenfont', sans-serif;
+      font-size: 64px;
+      padding: 30px;
+      color: #FFFFFF; /* 页面顶部大标题黑色 */
+    }
 
+    /* 页面其他标题 h1, h2, h3 */
+    h1, h2, h3 {
+      color: #ffffff; /* 正文标题白色 */
+    }
+
+    /* 正文链接 */
+    .page-wrapper a {
+      color: #1E90FF; /* 蓝色 */
+      text-decoration: none;
+    }
+    .page-wrapper a:hover {
+      text-decoration: underline;
+    }
+
+    /* 视频比例样式 */
+    .youtube-video { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px; }
+    .youtube-video-4x3 { aspect-ratio: 4 / 3; width: 100%; box-shadow: 10px 10px; }
+    .youtube-video-80 { aspect-ratio: 16 / 9; width: 100%; box-shadow: 10px 10px; }
+    .stream-4x3 { aspect-ratio: 4 / 3; box-shadow: 10px 10px; }
+    .video-4x3 { aspect-ratio: 4 / 3; width: 80%; box-shadow: 10px 10px; }
+
+    /* 页面布局 */
     .quick-nav { position: fixed; z-index: 999; width: 100%; text-align: right; color: #fff; font-size: 0.875em; }
     .navbar { padding: 1px 25px; }
     .navbar a { display: inline-block; text-decoration: none; color: #ffffff; margin: 0 2px; }
 
-    .header { background: url(); }
-    .title { background: linear-gradient(#54c5eb71, #54c5eb71), url(https://gremlin.neocities.org/images/blobz.gif); min-height: px; margin-bottom: -25px; text-align: center; }
-    .title-text, .title-pic { padding:0; margin: 0; display: inline-block; vertical-align: top; }
+    /* 页头背景保留原样 */
+    .title {
+      text-align: center;
+      margin-bottom: -25px;
+      background: linear-gradient(#00000000, #00000000), url(https://raw.githubusercontent.com/permanent-telex/img/main/aledc-ichy0.gif);
+    }
+    .title-text, .title-pic { padding:0; margin:0; display:inline-block; vertical-align: top; }
     .title-text { padding-right: 1em; width: calc(85vw - 110px); line-height: 167%; margin-top: -3px; padding-bottom: 15px; }
-    .title-text h1 { font-family: 'maidenfont', sans-serif;; padding:30px; font-size: 64px; }
-    .title-pic { height: 100px; margin-right: 100px; margin-top: -25px; border: 5px solid #9bd5e9; border-radius: 10px; }
-    .title-pic img { height: 100%; overflow: hidden; }
 
-    .page-wrapper { padding: 0 100px; margin: 0 auto; background: linear-gradient(#ee99a0a8, #ee99a06b), url(https://gremlin.neocities.org/images/gmcbg.gif); }
+    /* 正文区域背景改为纯黑 */
+    .page-wrapper {
+      padding: 0 100px;
+      margin: 0 auto;
+      background-color: #000000; /* 纯黑 */
+    }
+
     .sidebar { width: 320px; margin: 50px 0; position: absolute; }
     .sidebar h1 { font-size: 1.2rem; background: #65bfdd; color: #000000; padding: 12px 10px 10px 10px; margin: auto; }
     .sidebar a { display: block; border-left: 3px solid #54c5eb; background: #9bd5e9; padding: 5px; margin: 10px 0; color: #0e0718; text-decoration: none; box-shadow: 8px 8px #547f8d; }
@@ -45,9 +78,9 @@
     .sidebar, .main { display: inline-block; }
 
     .main { margin: 50px 100px 50px 350px; width: calc(100vw - 550px); }
-    .box { margin-bottom: 15px; box-shadow: 10px 10px }
+    .box { margin-bottom: 15px; box-shadow: 10px 10px; }
     .box h1 { background: #65bfdd; color: #000000; padding: 15px 12px 12px 12px; margin: auto; box-shadow: 10px 10px #547f8d; }
-    .inner { background:  #edeef3; padding: 10px 25px; }
+    .inner { background: #000000; padding: 10px 25px; color: #ffffff; }
     .inner img { max-width: 100%; height: auto; border-radius: 5px; }
     .box, .title-pic img { border-radius: 5px; overflow: hidden; }
 
@@ -55,6 +88,7 @@
     .footer a { color: #fff; }
     .footer-column { width: 25%; margin: 5px 10px; display: inline-block; vertical-align: top; }
 
+    /* 响应式布局 */
     @media(max-width: 900px) {
       .page-wrapper { padding: 0 50px; }
       .sidebar { width: 25vw; }
