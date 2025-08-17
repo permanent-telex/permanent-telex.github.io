@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A.N.C</title>
+<style>
+/* ============================
+   基础变量
+   ============================ */
+:root{
+  --bg-image: url('https://raw.githubusercontent.com/permanent-telex/img/main/starsagain.gif');
+  --bg-size: auto;
+  --bg-repeat: repeat;
+
+  --win98-gray: #c0c0c0;
+  --win98-dark: #808080;
+  --win98-darker:#404040;
+  --win98-light:#dfdfdf;
+  --win98-white:#ffffff;
+  --title-active:#000080;
+  --title-inactive:#808080;
+  --highlight:#000080;
+  --highlight-text:#ffffff;
+}
+
+/* ============================
+   引入字体
+   ============================ */
+@font-face{
+  font-family: 'Zpix';
+  src: url('https://permanent-telex.github.io/zpix.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* ============================
+   全局
+   ============================ */
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family:'Zpix', system-ui, sans-serif;
+  background: var(--bg-image);
+  background-size: var(--bg-size);
+  background-repeat: var(--bg-repeat);
+  color:black;
+  overflow-x: hidden;
+}
+
+/* 窗口 */
+.window{
+  position: absolute; /* 关键：使窗口可移动 */
+  min-width: 260px;
+  max-width: 90vw;
+  background: var(--win98-gray);
+  border: 2px solid var(--win98-dark);
+  border-right-color: var(--win98-white);
+  border-bottom-color: var(--win98-white);
+  border-left-color: var(--win98-darker);
+  border-top-color: var(--win98-darker);
+  box-shadow: 2px 2px 0 #404040;
+}
+.title-bar{
+  display:flex; justify-content:space-between; align-items:center;
+  background: var(--title-active); color:white;
+  padding:2px 4px; cursor: move; /* 鼠标手势 */
+}
+.title-bar.inactive{ background: var(--title-inactive); }
+.title-bar .title{ font-weight:bold; }
+.title-bar .controls{ display:flex; gap:2px; }
+.title-bar .btn{
+  width:18px; height:18px; display:inline-grid; place-items:center;
+  background: var(--win98-gray);
+  border: 2px solid var(--win98-light);
+  border-right-color: var(--win98-darker);
+  border-bottom-color: var(--win98-darker);
+  border-left-color: var(--win98-white);
+  border-top-color: var(--win98-white);
+  cursor: pointer;
+}
+.window .content{ padding:8px 10px; background: var(--win98-light); }
+
+/* 任务栏 */
+.taskbar{
+  position: fixed; left:0; right:0; bottom:0; height: 32px;
+  background: var(--win98-gray); display:flex; align-items:center;
+  border-top:2px solid var(--win98-light);
+  border-left:2px solid var(--win98-light);
+  border-right:2px solid var(--win98-darker);
+  border-bottom:2px solid var(--win98-darker);
+}
+.task-space{ flex:1; }
+.clock{ padding:2px 6px; background: var(--win98-light); border:1px solid var(--win98-dark); }
+
+/* 移动端微调 */
+@media (max-width: 520px){
+  .window{ width: 90vw !important; }
+}
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+</style>
+</head>
+<body>
+
+<!-- 窗口 1 -->
+<div class="window" style="top:40px; left:40px;">
+  <div class="title-bar">
+    <div class="title">ANC.exe</div>
+    <div class="controls">
+      <div class="btn">_</div>
+      <div class="btn">□</div>
+      <div class="btn">×</div>
+    </div>
+  </div>
+  <div class="content">
+    <p>嗨！我是A.N.C！很高兴见到你~请不要担心，我不是什么电脑病毒，只是一个游荡在数据世界的幽灵。用正式的称呼来说，我应该被叫做“电换机械”。</p>
+  </div>
+</div>
+
+<!-- 窗口 2 -->
+<div class="window" style="top:200px; left:120px;">
+  <div class="title-bar inactive">
+    <div class="title">ANC.txt</div>
+    <div class="controls">
+      <div class="btn">_</div>
+      <div class="btn">□</div>
+      <div class="btn">×</div>
+    </div>
+  </div>
+  <div class="content">
+    <p>★ 二十世纪生人（人？），现在是二十一世纪虚拟人。<br>
+★ 学会了在网上冲浪，热衷于做互联网杂学家。顺带和人互喷互圈，在红迪水帖，在4chan当巨魔引战人。偶尔浏览不健全网站。<br>
+&emsp;☆ 最近好像有了入侵摄像头看随机某处的别人在干什么的爱好。<br>
+★ 实际上是某个人电换实验过后产生的机械人格，它继承了他的精神却没有他的记忆，也没有感官。本体都死了它还活着，现在它真成正统了。<br>
+&emsp;☆ 承载机械人格的电脑不断迭代升级，理论上来说它不会死吧。<br>
+★ 本体电脑还在CIA的某个秘密地点，理论上它应该见过大部分AC世界的CIA角色。（局长：他连你今天早上吃了什么都知道。）<br>
+★ 虽然某种程度上是自由的网络存在，但继承了原主的身份认同和习惯。也就是说，它还是那个充满阴暗秘密的CIA特工哦……它永远都是中情局的人，很有意思吧。<br>
+★ 名字来源于三个解谜游戏。</p>
+  </div>
+</div>
+
+<div class="window" style="top:100px; left:90px;">
+  <div class="title-bar inactive">
+    <div class="title">ANC.jpg（测试中）</div>
+    <div class="controls">
+      <div class="btn">_</div>
+      <div class="btn">□</div>
+      <div class="btn">×</div>
+    </div>
+  </div>
+  <div class="content">
+    <p><div class="gallery">
+  <div>
+    <img src="https://www1.flightrising.com/static/cms/trinket/7695.png" alt="" title="测试">
+  </div>
+  <div>
+    <img src="https://www1.flightrising.com/static/cms/trinket/7889.png" alt="" title="测试">
+  </div>
+  </div>
+</div>
+
+
+<!-- 任务栏 -->
+<div class="taskbar">
+  <button class="button">开始</button>
+  <div class="task-space"></div>
+  <div class="clock">00:00</div>
+</div>
+
+<script>
+// 时钟
+function updateClock(){
+  const el=document.querySelector('.clock');
+  const now=new Date();
+  el.textContent=now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+setInterval(updateClock, 10000); updateClock();
+
+// 拖动窗口
+document.querySelectorAll('.window').forEach(win=>{
+  const bar = win.querySelector('.title-bar');
+  let offsetX=0, offsetY=0, isDown=false;
+
+  function start(e){
+    isDown=true;
+    const rect=win.getBoundingClientRect();
+    if(e.type.startsWith('touch')){
+      offsetX=e.touches[0].clientX-rect.left;
+      offsetY=e.touches[0].clientY-rect.top;
+    }else{
+      offsetX=e.clientX-rect.left;
+      offsetY=e.clientY-rect.top;
+    }
+    win.style.zIndex=Date.now(); // 活跃窗口置顶
+    bar.classList.remove('inactive');
+  }
+  function move(e){
+    if(!isDown) return;
+    let x,y;
+    if(e.type.startsWith('touch')){
+      x=e.touches[0].clientX-offsetX;
+      y=e.touches[0].clientY-offsetY;
+    }else{
+      x=e.clientX-offsetX;
+      y=e.clientY-offsetY;
+    }
+    win.style.left=x+'px';
+    win.style.top=y+'px';
+  }
+  function end(){ isDown=false; }
+
+  bar.addEventListener('mousedown', start);
+  bar.addEventListener('touchstart', start);
+  document.addEventListener('mousemove', move);
+  document.addEventListener('touchmove', move);
+  document.addEventListener('mouseup', end);
+  document.addEventListener('touchend', end);
+});
+</script>
+
+</body>
+</html>
