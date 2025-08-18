@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塞兰斯·诺沃塞立克</title>
+<style>
+/* 导入标题字体 */
+@font-face {
+    font-family: 'JudasPriest';
+    src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/king-crimson.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 全局样式 */
+body {
+    font-family: "Courier New", Courier, monospace; /* 正文打字机风格 */
+    background-color: #000; /* 黑底 */
+    color: #fff; /* 白字 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 容器 */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 35px;
+    background-color: rgba(255, 255, 255, 0.05); /* 半透明档案背景 */
+    border: 1px solid #555; /* 弱边框 */
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+    position: relative;
+}
+
+/* 页面头标题 */
+.header {
+    font-family: 'JudasPriest', sans-serif;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* 标签信息 */
+.label {
+    font-size: 0.85em;
+    color: #ccc;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* 内容 */
+.content {
+    line-height: 1.6;
+    white-space: pre-wrap;
+    font-size: 1em;
+}
+
+/* 高亮选中文字 */
+::selection {
+    background: #fff;
+    color: #000;
+}
+
+/* 链接样式 */
+a {
+    color: #fff;
+    text-decoration: underline dotted;
+}
+a:hover {
+    color: #aaa;
+}
+
+/* 页脚 */
+.footer {
+    font-size: 0.75em;
+    text-align: right;
+    margin-top: 30px;
+    color: #888;
+}
+
+/* 装饰效果：顶部胶带 */
+.tape {
+    position: absolute;
+    width: 70px;
+    height: 18px;
+    background-color: rgba(255,255,255,0.1);
+    top: -12px;
+    left: 20px;
+    transform: rotate(-6deg);
+}
+.tape.right {
+    left: auto;
+    right: 20px;
+    transform: rotate(6deg);
+}
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="tape"></div>
+  <div class="tape right"></div>
+
+  <div class="header">Cyrans Novoselic</div>
+<p><u><b>Vedio Lost（未开始）</b></u></p>
+<p>★ 依旧是安心与信赖的中情局特工，这次是在苏联的故事呢（喜）。长着一副东欧人的脸，顺利地混在那边。墓志铭君真走运。<br>
+★ 家里早年祖辈经历过卡廷惨案而他的母亲幸免于难，辗转多年定居美国。他不喜欢苏联，不只是因为家人的经历，也是某种程度上的意识形态不认同。<br>
+★ 生活的态度相当先锋派，对很多事情都抱有试试看的想法。
+<br>
+★ 对于血味和金属味很敏感，某种程度上可能是喜欢吧。另外的兴趣是切片标本。</p>
+
+<footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+</footer>
+
+</div>
+
+</body>
+</html>
+
+
