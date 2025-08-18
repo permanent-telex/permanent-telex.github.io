@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elowen Rainwater</title>
+<style>
+/* ============================
+   字体引入
+   ============================ */
+@font-face {
+  font-family: "Metallica";
+  src: url("https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/metallica.TTF") format("truetype");
+}
+
+/* ============================
+   全局样式
+   ============================ */
+body { 
+  background: #000;          /* 黑底 */
+  color: #fff;               /* 白字 */
+  font-family: "SimSun","宋体","Noto Serif SC",serif;
+  font-size:0.93rem;
+  line-height: 1.5;
+}
+
+/* 标题层级 */
+h1 { 
+  font-size: 2.15rem; 
+  font-family: "Metallica", sans-serif; /* 使用自定义字体 */
+  color: #505E7F; 
+}  
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 1rem; }
+
+/* 主容器 */
+.main {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  padding: 0.1rem;
+}
+.title p { font-weight:bold; }
+
+/* 顶部和底部的副标题栏 */
+.sub {
+  width: 100%;
+}
+.heading {
+  border-bottom:1px #fff solid;
+  border-top: 3px #fff double;
+  font-weight: bold;
+}
+.footer {
+  border-bottom: 3px #fff double;
+  border-top:1px #fff solid;
+}
+.sub-left { float: left; }
+.sub-right { text-align:right; float: right; }
+.sub-left, .sub-right {
+  padding: 0.5em 0.375em 0.2em 0.375em;
+}
+
+/* 全部大写 */
+.heading, h2, h3, h4, .readmore, .first-word {
+  text-transform: uppercase;
+}
+
+/* 全部大写 */
+.title h1 {
+  text-transform: none;
+}
+
+/* 栏目布局 */
+.columns { columns: 1; }  /* 改为单栏 */
+
+/* 内容区域 */
+.articles {
+  display: block;
+  padding: 1rem 0.275rem;
+}
+.articles p {
+  text-indent: 1em;
+  line-height:1.6em;
+  margin: 0.1em;
+  text-align:justify;
+}
+.articles h1, .articles h2, .articles h3, .articles h4 {
+  margin-top:0.1em;
+  margin-bottom:0.375em;
+  display: table; /* 避免被分栏拆开 */
+}
+
+/* 插图 */
+.articles img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem auto;
+  filter: grayscale(90%);
+}
+.articles img:hover { filter: grayscale(75%); }
+
+/* 分隔线 */
+hr {
+  max-width: 750px;
+  border: 0px;
+  height: 2px;
+  background: #fff;
+  margin: 1.25rem auto;
+}
+.main hr {
+  height:1px;
+  background: #fff;
+  margin: 0.8rem 0 1rem 0;
+}
+
+/* 引用块 */
+.articles blockquote { margin:0; display: block; }
+.blockquote-inner {
+  font-weight: bold;
+  margin: 1rem 2rem;
+  display: block;
+  font-size: 1.2em;
+}
+.articles .blockquote-inner p {
+  text-indent: 0;
+  text-align: center;
+  color: #ffeb3b; /* 给引用文字一点区分色（亮黄） */
+}
+.articles blockquote:before, .articles blockquote:after {
+  font-size: 4.5rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  position: relative;
+}
+.articles blockquote:before {
+  content: "“";
+  float: left;
+  top:-0.35rem;
+}
+.articles blockquote:after {
+  content: "”";
+  float: right;
+  top:-1.35rem;
+}
+
+/* 清除浮动 */
+clearfix {
+  content: "";
+  display: block;
+  clear: both;  
+  height: 0;
+}
+
+/* “continued...” */
+.articles .readmore p, .articles .continued p {  
+  font-size: 0.89em;
+  text-indent: 0;
+}
+.articles .readmore p {
+  font-weight: bold;
+  text-align: right;
+  margin: 0.5rem 0 0 0;
+}
+.articles .continued p {
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+/* 自适配 */
+@media (max-width: 754px) {
+  .main { width: 100%; }
+  .columns { columns: 1; }
+}
+@media (max-width: 500px) {
+  h1 { font-size: 1.95rem; }  
+  h2 { font-size: 1.1rem; }
+  h3 { font-size: 0.975rem; }
+  h4 { font-size: 0.92rem; }
+  body { font-size: 0.87rem; }
+  .sub-left, .sub-right { max-width: 50%; }
+}
+@media (max-width: 400px) {
+  .columns { columns: 1; }
+}
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+</style>
+</head>
+<body>
+
+<div class="main">
+
+  <div class="title">
+    <h1>Elowen Rainwater</h1>
+  </div>
+    
+  <div class="sub heading">
+    <div class="sub-right">1981 - </div>
+    <div class="sub-left"><span style="text-transform: capitalize;">Black Remorse</span></div>
+    <clearfix></clearfix>
+  </div>
+
+  <div class="articles columns">
+    <p><br>
+★ 元记者，在音le杂志/报纸上写报道和le评。<br>
+★ 从东海岸的大城市来。家里人好像是很有钱的样子，但关系不太好。<br>
+&emsp;☆ 「所以我跑了！」他大声说。「我不回去了！」<br>
+&emsp;☆ 完全没有有钱人的那种高高在上感。是实干家的同时也是空想家。<br>
+★ 其实他会乐器，很意外吗？在队里当主音，意外的是走技术流的。炫技技巧一抓一大把。<br>
+★ 加入目前的队伍之后把记者当成了副业，但用法好像不太对……开两个小号一个夸自己的队一个骂自己的队，炒热度也不是这样的吧。<br>
+★ 和他关系好的话可以叫他Ellie，叫Elise也行。<br>
+★ 极简主义者，家里很干净。干净到像无影灯下的手术台。<br>
+&emsp;☆ 不过有一个秘密的房间，打开门有可能是幻象也有可能是他作为Metal魔人的什么阴暗秘密。谁知道呢？<br>
+★ 喜欢Black Sabbath。<br>
+★ 兴趣是骑着机车飞跃深夜的高速公路。<br>
+★ 因为名字首字母是E所以被叫小E。你知道吗？其实E是Eclipse的E。</p>
+<br>
+<h2>这么说，你很帅咯？</h2>
+<p>★ 乐于认识各种各样的漂亮女孩，积极地献殷勤。有个专门的小本写满女孩们的联系方式。<br>
+★ 当然是天生金发，但认识他的人说他的发色像奶油。他觉得很不满意。<br>
+★ 在戴帽子和甩头之间选择了甩头，然后日常戴各种帽子。你到底多喜欢帽子啊？！<br>
+★ 舞台上经常穿沾满假血浆（可能也混了真的）的白衬衫，个人兴趣。<br>
+★ 黑历史：穿一身黑然后半夜出去鬼混，在没有路灯的地方差点被惊恐的路人打了。<br>
+<h2>二十世纪少年（迫真）</h2>
+<p>★ 60年代生人。什么你说他没读完大学？对啊他上一半就从老家跑了。再见了美丽的世界，我飞了！<br>
+★ 家父是艺术世家出身，家母是事业型女强人。一个过于敏感软弱，一个强硬到让人难以忍受。也难怪他不想和家里人相处。<br>
+★ 热爱生活吧！<br>
+<br>
+<br>
+</p>
+<hr>
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/rainwater.png" alt="" title="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/wfwqyfq14.png" alt="" title="">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1354.png" alt="" title="">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1451.png" alt="" title="">
+  </div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/3f11edf0-f3bf-47e3-a59c-2f9512998a91.png" alt="" title="by Business_Burd(on Reddit)">
+</div>
+</div>
+  <div class="sub footer">
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+    <clearfix></clearfix>
+  </div>
+
+</div>
+</body>
+</html>
