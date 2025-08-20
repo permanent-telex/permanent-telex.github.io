@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony of Destruction</title>
+    <meta name="author" content="[your name here]">
+    <meta name="description" content="[write about your site here]">
+
+    <style>
+    /* ============================
+       引入自定义字体 zpix
+       ============================ */
+    @font-face {
+        font-family: 'Zpix';
+        src: url('https://permanent-telex.github.io/zpix.ttf') format('truetype');
+    }
+
+    /* ============================
+       全局颜色变量
+       ============================ */
+    :root {
+        --site-bg: url('');
+        --main-bg: url('https://raw.githubusercontent.com/permanent-telex/img/main/stars.gif');
+        --gradient-bg: linear-gradient(0deg, #0000 0%, #1c246288 33%, #18084388 90%);
+        --accent-color: violet;
+        --link-color: mediumpurple;
+        --bg-color: black;
+        --text-color: white;
+        --text-color2: white;
+        --favorite-color: darkslateblue;
+    }
+
+    * {
+        color: var(--text-color);
+        font-family: 'Zpix', Verdana, Geneva, Tahoma, sans-serif;
+        text-shadow: 2px 2px 5px var(--bg-color);
+        scrollbar-color: var(--favorite-color) var(--bg-color);
+        scrollbar-width: thin;
+    }
+
+    ::selection {
+        background: var(--favorite-color);
+        color: var(--bg-color);
+    }
+
+    html {scroll-behavior: smooth;}
+
+    body {
+        margin: 0;
+        background-color: var(--bg-color);
+        background-image: var(--site-bg);
+        background-repeat: no-repeat;
+    }
+
+    p {line-height: 1.5em;}
+
+    header > h1 {
+        margin: 1em auto;
+        max-width: 960px;
+        padding-left: 1em;
+        text-align: left;
+        color: var(--text-color2);
+    }
+
+    nav {
+        padding: 0 1em 1em 1em;
+        font-weight: bold;
+    }
+
+    nav ul {
+        max-width: 960px;
+        margin: auto;
+        line-height: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style-type: none;
+        padding-left: 0;
+        justify-content: space-evenly;
+    }
+    nav li a {
+        background-color: var(--bg-color);
+        border: 1px solid var(--favorite-color);
+        padding: .5em 3em;
+        text-decoration: none;
+        transition: color 400ms ease-out, border-color 400ms ease-out;
+    }
+    nav li a:hover {
+        border: 1px solid var(--accent-color);
+    }
+
+    a {
+        color: var(--link-color);
+        transition: color 400ms ease-out;
+    }
+    a:visited {
+        color: var(--favorite-color);
+    }
+    a:hover {
+        color: var(--text-color2);
+    }
+
+    ul { list-style-type: "✦ "; }
+
+    #sidebar {
+        background-image: var(--main-bg);
+        border: 1px solid var(--favorite-color);
+        min-width: 220px;
+    }
+
+    #avatar {
+        margin: 1em auto;
+        max-width: 164px;
+        max-height: 164px;
+    }
+    #avatar img {
+        background: var(--bg-color);
+        max-width: 160px;
+        border: 1px solid var(--favorite-color);
+        box-shadow: var(--accent-color) 0 0 4px;
+    }
+
+    #bio {
+        font-size: smaller;
+        margin: 1em;
+        background: var(--bg-color);
+        border: 1px solid var(--favorite-color);
+        box-shadow: var(--accent-color) 0 0 4px;
+    }
+    #bio p {
+        margin: 1em;
+        color: var(--text-color2);
+    }
+
+    #content {
+        display: flex;
+        max-width: 960px;
+        margin: auto;
+    }
+
+    main {
+        background-image: var(--main-bg);
+        background-repeat: repeat;
+        image-rendering: pixelated;
+        max-width: 800px;
+        margin: auto;
+        border: 1px solid darkslateblue;
+        color: var(--accent-color);
+        max-height: 600px;
+        overflow:auto;
+    }
+
+    .prose {
+        background: var(--gradient-bg);
+        margin: 0;
+        padding: 1em;
+    }
+
+    .img-right { float: right; }
+
+    footer {
+        text-align: center;
+        font-size: small;
+        padding: 1em;
+    }
+
+    @media only screen and (max-width: 800px) {
+        #content {
+            flex-wrap: wrap;
+        }
+        #sidebar {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2em;
+        }
+        #avatar {margin: 0 1em;}
+        #bio {width: 50%;}
+        #sidebar ul {   
+            margin: 0 1em;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 2em;
+            padding-left: 0;
+        }
+        #sidebar li {
+            margin: .3em 1em;
+        }
+        main {
+            max-height: fit-content;
+        }
+        .img-right {
+            float: none;
+            text-align: center;
+        }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Symphony of Destruction</h1>
+    </header>
+        
+    <nav>
+        <ul>
+        <li><a href="https://permanent-telex.github.io/worlds/">Worlds</a></li>
+        <li><a href="https://permanent-telex.github.io/characters/">Characters</a></li>
+        <li><a href="https://permanent-telex.github.io/stories/">Stories</a></li>
+        <li><a href="https://permanent-telex.github.io/others/">Others</a></li>
+        </ul>
+    </nav>
+        
+    <div id="content">
+        <div id="sidebar">
+            <div id="bio">
+                <p>Pathfinder: Wrath of the Righteous</p>
+            </div>
+            <ul>
+                <li>种族：魔裔</li>
+                <li>职业：奥能师（魔源使）</li>
+            </ul>
+        </div>   
+        
+        <main>
+            <div class="prose">
+                <h1>经历</h1>
+            <ul>
+                <li>开局失去了记忆的漂泊者，魔裔奥能师（魔源使），自称为E。</li>
+                <li>在故事中意外获得了力量，理所当然地在最开始的地底冒险之后被推了一把当上了指挥官。虽然说他并不想参与到圣战之中，但现在也没地方可去了吧……抱着这样的心态接受了这样的事实，大概这就是命运的走向。
+</li>
+<li>也许是因为信仰死亡的神明和有着死亡的血统，他才会更加深刻地意识到死亡的作用和意义。在道途上他选择了巫妖之路，通过死灵法术来作为圣战的一种手段。最初他还是希望生者和死者可以共存的。</li>
+<li>得知了力量的真相后并没有想象中的崩溃愤怒，只是坦然地面对这一切。选择一凡人，然后将他置于你的掌控之下……他竭力地想要恢复正常。
+</li>
+<li>然而在从深渊重返之后，他彻底地被来自他人的不信任所击垮，变得心灰意冷。于是彻底在死亡的道路上一去不返，利用亡灵击退了恶魔，「我是死亡领主」。但也因为某种程度上的放任让亡灵杀死了城中的所有人，他对此感到遗憾但也仅限于遗憾。</li>
+<li>死亡是手段而非目的，圣战结束之后他就会离开，而亡灵会获得安息……他这么立下承诺。在最后面对世界之伤的解决方式里选择了自己跳下去来解决这一切。也许他彻底消失了，也许多年以后他还会通过命匣重返世间。但故事已然落下帷幕，指挥官E的旅途也就到此为止了。</li>
+            </ul>
+
+                
+                <h1>形象</h1>
+                <h2>初始E</h2>
+                <ul>
+                <li>E脑：失去了关于过去的记忆。大部分时间要不然比较冷淡，要不然就是在搞事。可能是不感兴趣，也有可能是因为和他人保持着自己都感觉不到的距离感。其实也有温和亲近人的一面，会在不自知的时候流露出来。很聪明，智力施法。信仰是法拉丝玛。</li>
+                <li>E思绪：性格虽然不太像好人且有很过分的一面，但总的来说还是个像样的指挥官。混乱中立。相比于堕落的祖先，他可是温顺了不少啊……
+</li>
+                <li>E血液：残忍族裔的后代。他的先代阴沉又厌世，着迷于死亡、疾病与破败。即使他不承认，他身上也流着这样的血。也许他的性格还是受此影响。</li>
+                <li>E头发：浅灰色，天生的颜色。让人感觉缺乏色素。</li>
+                <li>E眼睛：红色，偏暗。话说魔裔没有蓝眼睛呢。</li>
+                <li>E手：引火术！燃烧之手！总而言之明明有那么多法术却一直在烧人。纵火狂可能性微存。</li>
+                <li>E身体：个头不矮。身材不太健康，有点瘦过头了。</li>
+                <li>E尾巴：末端燃烧的火焰本质是一种假象，虽然它存在但不是真的火焰。没有温度，可以随便摸。</li>
+                <li>E腿：很长（重点）。</li>
+                <li>E刺青：脸上有很浅的刺青。</li>
+                </ul>
+                <h2>巫妖E</h2>
+                <ul>
+                <li>E脑：并非严肃的专业学者，但也有所研究一些知识。安静下来专注于死亡领域的事情，其实对操纵无辜者、无罪的人和非自愿的死者没有兴趣。对他有敌意或者是他的敌人的话会被狠狠地制裁。由于负能量的影响而有些阴沉，但作为游戏主角怎么能不算有论外的心理素质呢……<del>不过现在和以前信的神好像对立了，快去投苍姬！</del></li>
+                <li>E思绪：依然是有点狗的好人，跟原本性格没差多少，只是稍微过火了一点。依然有对于生命的某种心思。阵营转成了绝对中立。</li>
+                <li>E血液：不再活着因而不再有血，所以某种程度上摆脱了曾经的身份？只是死灵法师更过分吧。</li>
+                <li>E眼睛：更为深沉的暗红色，死去的凝血一般。绿色的部分是巫妖的象征！</li>
+                <li>E手：永远年轻永远在做纵火狂……可控性提高了呢（喜）虽然也有随手丢死灵法术的时候。指尖的黑色是逐渐在腐烂的肉体。</li>
+                <li>E身体：部分露出了骨架，不过有必要的话还是可以恢复正常人的表象。</li>
+                <li>E尾巴：由于步入死亡的领域而不再有生命的特征，变成枯骨了。然而依旧燃着虚构的火焰，从高温的蓝色染成了死灵法师的幽绿色。</li>
+                <li>E项链：月光石，蛇鞭草，黑色部分四舍五入是丝带。</li>
+                </ul>
+                <h1>个人感想</h1>
+                <ul>
+                <li>选巫妖道途其实是个人爱好所致，但是意识到他信法妈的时候一切都变得糟糕起来了……</li>
+                <li>救了几个队友但唯独没救他自己，也许是性格本身就具有的负面因素加上巫妖的负能量影响。他做过好事也做过坏事，最后选择跳下世界之伤也许是出于某种弥补罪恶的心吧。他已经经历的足够多，也太过于疲惫了。</li>
+                <li>虽然按照巫妖设定来说他主动跳应该是不会死的，但是看结局文本感觉确实是彻底离开了（我也倾向于这个想法）。毕竟世界之伤本质是一种概念层面的危机，而他的灵魂本就有着不可见却巨大的伤口。</li>
+                <li>过完全程剧情之后，感觉最开始给存档起这个名字就有种黑色幽默感：歌词和这个故事简直太贴合了，如你所见的被选中，也如你所见的走向毁灭。不管怎样，我确实对这个故事感到了有些遗憾。</li>
+                </ul>
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/e-wotr.png" alt="" title="">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0989.png" alt="" title="">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/1746367740444_1746367872427.png" alt="" title="by 企鹅">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_3002_1746439857731.PNG" alt="" title="by 芋鼠标本6号">
+  </div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224717_edit_561312727468322.jpg" alt="" title="by 莱茵">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_20250514_224708_edit_561293000376610.jpg" alt="" title="by 莱茵">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_4972_1751189512272.PNG" alt="" title="by 百里子">
+</div>
+            </div>    
+        </main>
+    </div>
+        
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://nomnomnami.com/templates/">nomnomnami.com</a></p>
+</footer>
+</body>
+</html>
