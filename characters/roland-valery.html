@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 
+feel free to remove all of this!
+---
+template coded by doqmeat.
+---
+live preview: https://doqmeat.com/notebook/F2U/preview/notebook
+---
+more html and css resources @ https://www.w3schools.com/ +  https://developer.mozilla.org/en-US/docs/Learn/HTML
+---
+more resources + graphics links can be found here if you need some pointers https://doqmeat.com/notebook
+---
+feel free to contact me for any questions! -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>罗兰·瓦勒里</title>
+	<link rel="icon" type="image/x-icon" href="IMG-URL-FOR-FAVICON">
+	<style>
+		html {
+			/* feel free to delete this if you just want the normal cursor! */
+			cursor: cell;
+			scrollbar-color: #c5dca0 #add8e6;
+			/*			scrollbar for firefox users*/
+		}
+
+		body {
+			background: lightblue;
+			margin: 0px;
+			word-wrap: break-word;
+			font-size: 19px;
+			line-height: 25px;
+			word-spacing: 4px;
+			font-family: "Microsoft YaHei";
+			/* ms pgothic is not compatible with safari or mobile devices*/
+			color: black;
+		}
+
+		mark {
+			background: lightgoldenrodyellow;
+		}
+
+		#wrapper-index {
+			/* the notebook's cover */
+			background: lightgrey;
+			position: relative;
+			margin: auto;
+			margin-top: 30px;
+			margin-bottom: 35px;
+			width: 1108px;
+			padding: 20px 10px 15px 10px;
+			border-radius: 20px;
+			border: 1px solid black;
+		}
+
+		/*this is my ugly binder spiral! feel free to remove it or change it. it wont mess the rest of the code! */
+		#tab1-wrapper:after,
+		#tab2-wrapper:after,
+		#tab3-wrapper:after,
+		#tab4-wrapper:after,
+		#tab5-wrapper:after,
+		#tab6-wrapper:after,
+		#tab7-wrapper:after,
+		#tab8-wrapper:after {
+			content: url(https://raw.githubusercontent.com/permanent-telex/img/main/spiral-test4.png);
+			position: absolute;
+			z-index: 10;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+			pointer-events: none;
+		}
+
+		/* PAGES CSS */
+
+		.paper {
+			/*the CSS of both "pages" boxes. you can choose the look of ALL pages here */
+			background: url(https://raw.githubusercontent.com/permanent-telex/img/main/whiteline.jpg);
+			z-index: 5;
+			position: relative;
+			display: inline-block;
+			box-sizing: border-box;
+			border: 1px solid lightblue;
+			height: 600px;
+		}
+
+		.left {
+			width: 490px;
+			margin-left: 50px;
+			margin-right: 10px;
+			border-radius: 10px 0px 0px 10px;
+			overflow: hidden;
+		}
+
+		.left-in {
+			/*			the main purpose of this class if so the scrollbar of left pages arent obscured by the bind spiral */
+			padding: 15px 10px 15px 25px;
+			height: 100%;
+			margin-right: 15px;
+			overflow: auto;
+		}
+
+		.right {
+			padding: 15px 25px;
+			width: 490px;
+			margin-left: 10px;
+			border-radius: 0px 10px 10px 0px;
+			overflow: auto;
+		}
+
+		/* you can also customize the look of SPECIFIC pages. take TAB 2 for example: */
+
+		#tab2-p {
+			font-family: consolas;
+			font-size: 14px;
+			background: url(https://raw.githubusercontent.com/permanent-telex/img/main/yellobg.png);
+			border-color: lightcoral;
+		}
+
+		/* tab buttons CSS stuff */
+
+		.tab {
+			/* for the ones on the left */
+			width: 590px;
+			height: 50px;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			rotate: -90deg;
+			top: -10px;
+			left: -232px;
+		}
+
+		.tab2 {
+			/* for the ones on the right */
+			width: 590px;
+			height: 50px;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			rotate: 90deg;
+			top: 590px;
+			right: -232px;
+		}
+
+		.tab button,
+		.tab2 button {
+			/*this is the look of the TABS! */
+			z-index: 1;
+			position: relative;
+			vertical-align: top;
+			/* when changing fonts it might mess with the tabs and make them dissappear... change the width when that happens */
+			width: 120px;
+			margin: 0px 8px;
+			padding: 10px 0px 30px 0px;
+			/* inherits the font-family from the ones in the body */
+			font-family: inherit;
+			border: none;
+			cursor: help;
+			font-size: 19px;
+			transition-duration: 0.5s;
+			top: 10px;
+			border-radius: 10px 10px 0 0;
+			border: 1px solid grey;
+		}
+
+		/* here you can change the color of each individual TAB button*/
+		.tab1-b {
+			background: #C5DCA0;
+		}
+
+		.tab2-b {
+			background: #B6A7DC;
+		}
+
+		.tab3-b {
+			background: #F9DAD0;
+		}
+
+		.tab4-b {
+			background: #F5F2B8;
+		}
+
+		.tab5-b {
+			background: #F1B46A;
+		}
+
+		/* hover effect of TAB*/
+		.tab button:hover,
+		.tab2 button:hover {
+			top: 0px;
+			cursor: -webkit-grab;
+			cursor: grab;
+		}
+
+		/* selected TAB effect aka when its focused */
+		.tab button.active,
+		.tab2 button.active {
+			top: 0px;
+			cursor: -webkit-grabbing;
+			cursor: grabbing;
+			box-shadow: 1px 1px 20px 1px grey;
+			outline: none;
+		}
+
+		/* custom scrollbar for chrome users, firefox users cant see this */
+		::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+
+		::-webkit-scrollbar-thumb:vertical {
+			background: white;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+		::-webkit-scrollbar-thumb:horizontal {
+			background: white;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+			border-radius: 10px;
+			background: transparent;
+		}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* 控制图片间距 */
+  max-width: 100%; /* 避免固定死 */
+}
+
+.gallery > div {
+  width: calc(50% - 10px); /* 每行两张图，减去间距 */
+  height: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+	</style>
+</head>
+
+<body>
+
+	<!-- 	NOTEBOOK wrapper -->
+	<div id="wrapper-index">
+
+		<div class="tab">
+			<button class="tablinks tab4-b" onclick="openTab('tab4-wrapper')">tab 4</button>
+			<button class="tablinks tab3-b" onclick="openTab('tab3-wrapper')">tab 3</button>
+			<button class="tablinks tab2-b" onclick="openTab('tab2-wrapper')">Gallery</button>
+			<button class="tablinks tab1-b" onclick="openTab('tab1-wrapper')" id="defaultOpen">角色设定</button> <!-- 	id="defaultOpen" chooses which tab the notebook will have open when page is loaded -->
+		</div>
+
+		<div class="tab2">
+			<button class="tablinks tab5-b" onclick="openTab('tab5-wrapper')">tab 5</button>
+			<button class="tablinks tab6-b" onclick="openTab('tab6-wrapper')">tab 6</button>
+			<button class="tablinks tab7-b" onclick="openTab('tab7-wrapper')">tab 7</button>
+			<button class="tablinks tab8-b" onclick="openTab('tab8-wrapper')">tab 8</button>
+		</div>
+
+		<!-- 	TAB 1 wrapper -->
+		<div id="tab1-wrapper" class="tabcontent">
+			<div id="tab1-p" class="paper left">
+				<div class="left-in">
+<h1>Roland Valery</h1>
+<p><u><b>阿诺德高中手册（未参与）</b></u></p>
+<p>兴趣爱好：重型音乐；绘画；独处；看漫画杂志</p>
+<ul>
+<li>平平无奇的高中学生，随处可见到丢进人群就再也找不到的程度。</li>
+<li>性格很害羞和怕生，经常独处。和人社交基本处于被动，远远地站在人群外的安静小孩。</li>
+<li>经常插着耳机听很重很硬的音乐，意外地很反差。脑内狂乱的重型爱好者。</li>
+<li>因为内向所以很少和身边人提起自己对音乐的爱好，大部分时间里很难有人看出来他的个人兴趣。</li>
+<ul>
+<li>黑历史：去Livehouse被同学认出来，心态崩了。</li>
+<li>还被拉去搞乐队了。</li>
+</ul>
+<li>紧张的时候会咬指甲。</li>
+</ul>
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0884.png" alt="">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0881.png" alt="">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0882.png" alt="">
+</div>
+					<!-- TAB 1 left paper end divs -->
+				</div>
+			</div>
+			<div id="tab1-p" class="paper right">
+<p><u><b>格伦多生存指南</b></u></p>
+<ul>
+<li>性格很害羞和怕生，经常独处。和人社交基本处于被动，远远地站在人群外的安静小孩。</li>
+<li>经常插着耳机听很重很硬的音乐，意外地很反差。对无论哪种乐队人都很有好感，没有什么特别的理由，他相信搞乐队的不会是坏人这样的想法……虽然说某种程度上他认为的坏人可能和传统意义上有点偏差。</li>
+<li>有点害怕和人讨论关于音乐的事情。</li>
+<li>家庭条件属于中产偏上的水平，所以生活还算不错。私下里也有在家里的车库弹吉他，买了把纯黑色的。</li>
+<li>有一点点亚文化兴趣。</li>
+<li>以前弹过钢琴，也学过画画。总之如果他想的话展示出来的水平会很不错哦……出于害怕自己太过显眼的心态选择不展现自己的特长。</li>
+<li>紧张的时候会咬指甲。</li>
+<li>黑历史：去livehouse被同学撞见，心态崩了。</li>
+</ul>
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/QQ图片20241118225338.png" alt="">
+</div>
+			</div>
+			<!-- 	TAB 1 wrapper end div -->
+		</div>
+
+		<!-- TAB 2 wrapper -->
+		<div id="tab2-wrapper" class="tabcontent">
+			<div id="tab2-p" class="paper left">
+				<div class="left-in">
+<br>
+<br>
+<br>
+<br>
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0879.png" alt="">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/jm8b5d.png" alt="">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/lnaf61.png" alt="">
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/mmexport1744374799283_edit_433773084486402.jpg" alt="">
+</div>
+
+					<!-- TAB 2 left paper end divs -->
+				</div>
+			</div>
+			<div id="tab2-p" class="paper right">
+				text goes here
+
+				<!-- TAB 2 right paper end div -->
+			</div>
+			<!-- TAB 2 wrapper end div -->
+		</div>
+
+		<div id="tab3-wrapper" class="tabcontent">
+			<div id="tab3-p" class="paper left">
+				<div class="left-in">
+					text goes here
+
+				</div>
+			</div>
+			<div id="tab3-p" class="paper right">
+				tab 3 pages
+
+			</div>
+		</div>
+
+		<div id="tab4-wrapper" class="tabcontent">
+			<div id="tab4-p" class="paper left">
+				<div class="left-in">
+					tab 4 pages
+
+				</div>
+			</div>
+			<div id="tab4-p" class="paper right">
+				text goes here!
+
+
+			</div>
+		</div>
+
+
+		<div id="tab5-wrapper" class="tabcontent">
+			<div id="tab5-p" class="paper left">
+				<div class="left-in">
+					tab 5 pages
+
+				</div>
+			</div>
+			<div id="tab5-p" class="paper right">
+				text goes here!
+
+			</div>
+		</div>
+
+		<div id="tab6-wrapper" class="tabcontent">
+			<div id="tab6-p" class="paper left">
+				<div class="left-in">
+					text goes here
+
+				</div>
+			</div>
+			<div id="tab6-p" class="paper right">
+				text goes here
+
+			</div>
+		</div>
+
+		<div id="tab7-wrapper" class="tabcontent">
+			<div id="tab7-p" class="paper left">
+				<div class="left-in">
+					text goes here
+
+				</div>
+			</div>
+			<div id="tab7-p" class="paper right">
+				text goes here
+
+			</div>
+		</div>
+
+		<div id="tab8-wrapper" class="tabcontent">
+			<div id="tab8-p" class="paper left">
+				<div class="left-in">
+					text goes here
+
+				</div>
+			</div>
+			<div id="tab8-p" class="paper right">
+				text goes here
+
+			</div>
+		</div>
+
+
+		<!-- TEMPLATE for new set of TAB pages that you can copypaste
+
+	<div id="tab[num]-wrapper" class="tabcontent">
+	<div id="tab[num]-p" class="paper left">
+ <div class="left-in">
+		text goes here
+
+		</div></div>
+	<div id="tab[num]-p" class="paper right">
+		text goes here
+
+	</div></div>
+
+-->
+
+		<!-- NOTEBOOK wrapper end div -->
+	</div>
+
+
+	<script>
+		function openTab(tabName) {
+			var i;
+			var tab = document.getElementById(tabName);
+			var otherContent = document.getElementsByClassName("tabcontent");
+			var defaultOpen = document.getElementById("defaultOpen");
+			var buttons = document.getElementsByClassName("tablinks");
+			for (i = 0; i < otherContent.length; i++) {
+				otherContent[i].style.display = "none";
+			}
+			for (i = 0; i < buttons.length; i++) {
+				buttons[i].classList.remove("active");
+			}
+			tab.style.display = "block";
+			event.currentTarget.className += " active";
+		}
+		document.getElementById("defaultOpen").click();
+
+	</script>
+</body>
+
+</html>
