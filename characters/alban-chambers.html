@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>埃尔本·钱伯斯</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Nirvana 'Come As You Are'</h1>
+          <p><i>Come, as you are, as you were<br>As I want you to be<br></i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>Alban Chambers</h1>
+<p><u><b>尖端玩家：零号街机</b></u></p>
+<p>
+&emsp;&emsp;埃尔本来自西雅图的一个中产家庭，关于他的过去他并未怎么透露，不过可以确定的是他大学毕业后就出来拉人一起玩乐队了（他们的风格是Alternative Rock，另类摇滚）。最开始还差点当了贝斯手。他在队内属于门面担当的那一个，无论是他的体型还是他的脸，队友都指望着能靠他多拉点人气。早期他们只有去各种酒吧驻场的机会，后来有机会录制了两张录音室专辑，但依旧人气惨淡。<br>
+&emsp;&emsp;后来在1986年，通过某种渠道，《长夜惊魂》的制作组找上了他们，希望他们可以录制给游戏的主题曲和插曲，并且答应后续会联合唱片公司发布专辑。缺钱缺人气的他们便同意了这个邀请。<br>
+&emsp;&emsp;虽然后来游戏的制作波折，最终下架。但在那之前完成了录制的他们拿到了应有的报酬，并且同唱片公司商定好了合同。专辑在制作组的同意后以独立专辑的形式发布，乐队在这次发布后大获成功，从而进入事业上升期。<br>
+&emsp;&emsp;几年后，由于一些队内纠纷，他作为leader开除了当初的主音吉他手，并且由自己接任吉他手职位，同时也还是保留自己的主唱位置。乐队并未因为此事而遭受打击，仍然保持着原有的人气继续进行活动。<br>
+&emsp;&emsp;这么多年来他有着一些特别的理念。虽说他永远年轻永远热泪盈眶……永远脑子不好使。比他年代早且先锋的也不止一个两个，他也没有革命造反的少年心气。但他其实从来没有过这样的心，相反，他在某种程度上非常纯粹：他的梦想只是闯出名头的同时给这个世界留下点什么。<br>
+<br>
+&emsp;&emsp;1999年，他收到了来自当初制作组的消息。思索再三后他决定前往和其他人聚一聚。前不久他刚和队友录完新专，他的时间还有很多。况且这场聚会是纪念那位他在游戏制作过程中认识的朋友的，他必须要去一趟才行。<br>
+<br>
+&emsp;&emsp;结局：结团san值结算为99，美利坚意志超人的诞生。同时他还得到了一个神秘的项链。至于那是什么，就留作另外一个故事吧。
+            </p>
+
+<details><summary>前日谈</summary>
+
+&emsp;&emsp;1986年，那时的他正好二十七岁，一个多么传奇的年龄。如果错过这个时间的话，再往后决定自己是死是活就很难了。当然，能否成为传奇也是在这个年龄……至少他在1994年之后就这么觉得。<br>
+&emsp;&emsp;那时的他还没把队里另外一个吉他手踹走，队内关系还算融洽。《长夜惊魂》制作组就是在那年找上的他们，要他们写专门给这部游戏的主题曲和插曲。<br>
+&emsp;&emsp;然后他们就签了。原因很简单：给的钱多，还能混出名头。毕竟当年游戏的确是个很流行的东西。<br>
+&emsp;&emsp;实际上他们并没有什么进录音室的经验。在此之前他们只做过两张专辑，一张无人问津，另外一张也无人问津，只不过有机会放进音像店而已。他还记得，自己第一次去录音室的时候的第一感受就是“吸音棉贴得像是精神病院的软垫病房”，反正不怎么样。当初那个严肃的制作人也让他印象极差，他不喜欢那样的人。尽管那个人相当敬业和负责。<br>
+&emsp;&emsp;不管怎么说，《长夜惊魂》倒是给了他们一个机会。这次的进展很顺利，从写词到作曲都顺利得让人不可思议。虽说也只是相对性的，毕竟有一些歌被砍了好几次乃至被废弃（后来这些被废弃的歌在好事的游戏爱好者口中成了游戏废案的一部分，甚至演化出了什么关于游戏的都市传说）。<br>
+&emsp;&emsp;之后便是漫长的录音环节，最长的时候他们几乎从早到晚都泡在录音室里，持续时间就不提了，肯定非常漫长。当初的那个主音吉他手抱怨自己的手都快僵了，如果再录下去的话他就会想拿吉他砸烂录音设备，砸个稀烂。<br>
+&emsp;&emsp;“我也这么想，”他说。不过他自己当时手里的那把Fender可不便宜，他们队里面高端的琴也就属这把了。有时他还得和主音轮着用。
+&emsp;&emsp;“但是我肯定不会用我的琴把设备砸烂的。”于是他补充了一句，然后接着招呼其他队友继续录音。在那之前他们刚吃完一张冷的披萨，因为他们叫的外送到的时候他们还没结束工作。<br>
+&emsp;&emsp;录音完成后，他们拿到了游戏制作组如约支付的报酬。顺带在那之后的几天就又和唱片公司谈妥了生意，签了合同，等待原声专辑的发行。
+&emsp;&emsp;不幸的是，《长夜惊魂》的制作历经波折，最终惨遭下架的下场。他们的歌没在游戏里出现，却因为事先商定的合同而出现在了专辑里，或者说是在各处音像店里热销的专辑里。没错，他们的这张专大获成功，一时间他们的队伍成为了街头巷尾流传着的知名乐队。<br>
+&emsp;&emsp;“我没想到会变成现在这样。”他感慨地对后排的队友们说。他们不久前从外地回到了西雅图，白天又去外面玩了一圈。<br>
+&emsp;&emsp;车里放着音乐电台，而音乐电台放着他们的歌。由于信号不好而时不时传出一些杂音，不过并不影响收听，反而和本就模糊的音乐原声混在了一起。<br>
+&emsp;&emsp;他看到街边有几个学生正在墙上涂鸦，夜晚的这个时候通常缺乏管制手段，因此做什么只要不被发现就行。涂鸦也是。那些学生似乎涂画着专辑的封面，血红的字一如专辑内的第一首单曲一样尖锐刺人。<br>
+&emsp;&emsp;鲜红的。血红的夜晚。欢迎来到地狱。<br>
+&emsp;&emsp;他突然想起零零散散的歌词。接着在信号灯变换的时候一脚油门加到底，好似要冲到世界尽头一般（队友之中那个暴躁的吉他手狠狠地踹了他的座椅一脚）。后视镜里的那些学生的身影逐渐缩小，直到消失不见。我们可能再也见不到他们了，他这样想。西雅图的人是很多的，西雅图之声也是很多的。假如我们的声音无可替代，那他们呢？<br>
+&emsp;&emsp;之后的他们还是一如既往，写歌、录音、出专辑、巡演。只不过录音的地方更加专业了，录音的音质更好了。巡演的地方更多了，从本地到外地再到其他州。场合也从酒吧变成了体育场和大型Livehouse，他们要面对的人更多了。<br>
+&emsp;&emsp;哦，还有他把另外一个吉他手踹走了。<br>
+&emsp;&emsp;而他呢？他压根没变。仍然在舞台上嘶喊演奏，唱着无意义的宣泄的歌词，几乎用砸的方式弹下每一个和弦，气氛足够时伴随听众的呼喊砸烂批量生产的吉他。他依旧不在乎别人怎么说，只在乎自己想做什么，更多的是想留下点什么。许许多多搞乐队的人都说自己想改变世界想表达观点想造反，而他则没那么大的野心，或者说他的野心大到反而让人觉得单纯——只是在这个世界上留下点什么，哪怕只是一声杂音都好。革命造反的少年心气他肯定是没有的，teen spirit他也没买过，反正对他来说都没用。<br>
+&emsp;&emsp;所以某种程度上来说，另类摇滚确实和他很相配。他在那些人里也算是个另类的家伙。他是Alternative中的Alternative，几乎刻进八十年代的自我主义者，墙上的另一块砖。<br>
+&emsp;&emsp;现在是1999年，他四十岁了。他看向镜子里的自己：一头红发，在灯光下像是燃烧的火焰。绿色眼睛仍然还是原来的眼神，毫无杂质。星星项链好像有点掉漆，正好卡在他的锁骨处。当年他在一家小店买了它，能坚挺到现在也算是质量上乘。一切好像什么都没变，又好像什么都变了。队友说他有点沧桑了，但大概是仅限于长相的自然变化。不过他依旧像年轻时那样好看，也依旧像年轻时那样充满激情。一如当年他在西雅图的某间酒吧角落宣言自己一定会在这世上留下什么的样子，像个伟人。
+
+</details><br>
+<div class="gallery">
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/l%20(74).png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/l%20(93).png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/5c13eb7eef833ac192e6c71fe80c044f_1753805260019.png" alt="" title="by 走望型见">
+</div>
+    </div>
+
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
