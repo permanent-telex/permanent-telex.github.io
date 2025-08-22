@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仲辻 久锖</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Metallica 'Creeping Death'</h1>
+          <p><i>Die by my hand<br>I creep across the land<br>Killing first born man<br></i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>仲辻 久锖</h1>
+<p><u><b>末日少年 PC4</b></u></p>
+<ul>
+                <li>伏行死亡，Creeping Death。好啦，我们不聊歌的事情了。</li>
+                <li>在发动能力的时候头发会轻微地飘起来，尤其是呆毛 。是电流的作用哦。</li>
+<li>金属头，电气大魔王。和他的代号一样是大M爱好者。如果他玩乐队就会像Kirk一样狂踩哇音，可惜他不玩。</li>
+<li>身体大部分由机械结构构成，在某一个时刻停止了生长。所以虽然年龄不小但脸还是大学生的样子。</li>
+            </ul>
+<div class="gallery">
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/p0m2ye.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/opps.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/cd1987.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1509.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/4282aece65823f693519307cc4b7e3bb_1754209482743.png" alt="" title="by 走望型见">
+</div>
+
+<details><summary>Warhammer 40k AU</summary>
+
+写在前面：这只是出于个人兴趣的AU制作，如果不符合原作or过度萌二实在是抱歉。总而言之，就是这样不合理的在做事罢了。
+
+<ul>
+                <li>在这个世界里用日本名会不会很奇怪？所以现在他在这里有别的名字了：利维亚斯·梅利（Levias Merry）。</li>
+                <li>如你所见的机械神教成员，出生在火星上。虔诚的信仰着万机之神，工作相当认真。对于发掘科技和研究知识很有兴趣，似乎是他把自己的存在意义投射到了其中一样。不过请不要误会，他只是单纯喜欢机械结构这种精细的事物，并不擅长发展新的技术。</li>
+<li>全身大部分进行了改造，包括但不限于：四肢替换、脑部植入物（右脑被高度激发空间感知、计算能力和速记能力等）、脑外覆盖保护性的金属制结构……不过改造并没有让他的体型有什么变化。</li>
+<li>行走时会偶尔发出金属碰撞的声音，不过考虑到他的身体构成基本就是一堆金属牵起来的散乱肉体，倒也不算奇怪。因为部分机械化副作用而失去了正常说话的能力，只能通过脑内思考再利用设备传达出来，他戴着的类似于口罩的东西就是用来做这个的。</li>
+<li>知觉（特指对于疼痛和不适）相对来说比较迟缓，不过你也不会想打他的。身体相当坚硬。</li>
+            </ul>
+
+</details>
+
+    </div>
+
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
