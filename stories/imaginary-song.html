@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imaginary Song</title>
+
+  <style>
+    /* ------ COLORS ------ */
+    :root {
+      --bg: linear-gradient(0deg, #faf6fa, #f9effa 30%);
+      --bg-overlay: url("https://raw.githubusercontent.com/Permanent-Telex/img/main/cork.png");
+      --header-footer-overlay: url("https://raw.githubusercontent.com/permanent-telex/img/main/gplay.png");
+      --sidebar: #232447;
+      --sidebar-text: #feffe0;
+      --highlight: #dbd0ef;
+      --text: black;
+      --accent: #d392d5;
+      --link: #054d09;
+      --visited-link: #4b0562;
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10092a;
+        --bg-overlay: none;
+        --text: white;
+        --accent: #8f6796;
+        --highlight: #4d104a;
+        --highlighttext: #feffe0;
+        --link: #feffe0;
+        --visited-link: #eefff4;
+      }
+    }
+
+    /* ------ FONTS ------ */
+    body {
+      font-family: Dyslexie, OpenDyslexic, 'Atkinson Hyperlegible', Verdana, Ubuntu, roboto, noto, Arial, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, -apple-system, BlinkMacSystemFont, Sans-Serif;
+      font-size: 1em;
+      word-spacing: 0.05em;
+    }
+    nav {font-size: 1.2em;}
+    header h1 {
+      font-family: Dyslexie, OpenDyslexic, 'TrinitarianRhapsody', Serif;
+      word-spacing: 0.1em;
+      font-size: 2.5em;
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'TrinitarianRhapsody';
+      font-style: normal;
+      font-weight: 400;
+      src: local('TrinitarianRhapsody'),
+           url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/trinitarian-rhapsody.ttf') format('truetype');
+    }
+
+    /* ------ LAYOUT & ELEMENTS ------ */
+    body {
+      line-height: 1.6em;
+      background: var(--sidebar);
+      background-image: var(--header-footer-overlay);
+      color: var(--text);
+      margin: 0;
+    }
+    body:before {
+      content: "";
+      display: block;
+      background-image: var(--bg-overlay);
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      min-height: 100vh;
+      z-index: 9999;
+      position: fixed;
+      pointer-events: none;
+      margin: 0;
+      opacity: 0.6;
+    }
+
+    main {
+      background: var(--bg);
+      flex-basis: calc(100% - 30em - 2em);
+      margin-right: 2em;
+      flex-grow: 1;
+    }
+    .flex-columns {display: flex;}
+    article {
+      max-width: 60ch;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    header, footer {
+      background: transparent;
+      color: var(--sidebar-text);
+      margin: 0;
+      text-align: center;
+      overflow: clip;
+    }
+    header {flex-basis: 30em; max-width: 40vw;}
+    footer {padding: 1em;}
+    footer p {max-width: 65ch; margin: auto;}
+
+    h1, h2, h3, h4, h5, h6, dt {
+      background: var(--highlight);
+      padding: 0.2em;
+      border-radius: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 60% auto 0.4em auto;
+      padding: 1em 0;
+      background: rgba(0,0,0,0.4);
+      box-shadow: 0em 1.5em 1em 1em rgba(0,0,0,0.4),
+                  0em -0.5em 0.5em 0.5em rgba(0,0,0,0.4);
+    }
+    header nav ul {
+      margin: 0; padding: 0;
+      padding-bottom: 0.5em;
+      list-style-type: none;
+    }
+    header nav ul li {display: inline-block; padding: 0 0.5em;}
+
+    summary:hover {cursor: pointer;}
+    aside {border: 2px solid var(--accent); padding: 1em;}
+    dt {font-weight: bold; text-align: left; margin: 0.5em;}
+
+    a {color: var(--link);}
+    a:visited:not(header a, footer a) {color: var(--visited-link);}
+    header a, footer a {color: var(--sidebar-text);}
+    hr {border: 2px dashed var(--accent);}
+
+    ::selection, mark {
+      color: var(--highlighttext);
+      background: var(--highlight);
+      border-bottom: 1px solid var(--accent);
+    }
+    mark::selection {background: rgba(0,0,0,0.15);}
+    :focus {
+      outline: 2px solid red; border-radius: 5px; color: black;
+      background: #f9f6ff; padding: 2px;
+    }
+    #skiplink {
+      position: absolute;
+      display: inline-block;
+      margin: 0; padding: 0;
+      max-height: 1px; max-width: 1px;
+      color: transparent;
+      pointer-events: none;
+    }
+    #skiplink:focus, #skiplink:active, #skiplink:focus-visible {
+      position: absolute; left: 0; top: 0; z-index: 999;
+      background: rgba(0,0,0,0.8); border: 2px solid var(--accent);
+      max-height: 2em; max-width: 100%; color: inherit;
+      margin: 0; padding: 1em; text-align: left;
+      pointer-events: auto; font-size: 1.5em;
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      h1, h2, h3, h4, h5, h6, dt, mark {color: var(--highlighttext);}
+      mark {padding: 2px 5px;}
+    }
+    @media only screen and (max-width: 1100px) {
+      header {flex-basis: 25em;}
+    }
+    @media screen and (max-width: 950px) {
+      .flex-columns {flex-direction: column;}
+      header {padding: 1.5em 0.5em 1em 0.5em; flex-basis: 8em; max-width: 100%; overflow: visible;}
+      header h1 {padding: 0; box-shadow: none; background: none; margin-top: 0.7em;}
+      main {margin: 0; flex-basis: auto;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex-columns">
+    <header>
+      <a href="#main" id="skiplink">Skip to main content</a>
+      <h1>Imaginary Song</h1>
+      <nav aria-label="Site navigation">
+        <ul>
+          <li><a href="https://permanent-telex.github.io/worlds/">Worlds</a></li>
+          <li><a href="https://permanent-telex.github.io/characters/">Characters</a></li>
+          <li><a href="https://permanent-telex.github.io/stories/">Stories</a></li>
+          <li><a href="https://permanent-telex.github.io/others/">Others</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main"><article>
+<h1>MIDICITY</h1>
+<h1>队伍介绍</h1>
+      <p>&emsp;&emsp;硬摇滚团体。早期是玩前卫摇滚的，后来转型为现在的风格。以华丽的台风、奇特的造型和近乎胡作非为的日常行为作风而闻名。<br>
+&emsp;&emsp;乐队雏形是主唱和现在的节奏吉他（当初是鼓手）在高中生时期组建的乐队「Disintegration House」，毕业后乐队解散并且由主唱为队长重新组建团队，更名为「Imaginary Song」。主唱位置不变，兼任键盘手。当初的鼓手也同样留在了新团队中，吉他手和贝斯手则是通过招募加入。后来吉他手和贝斯手因音乐理念问题主动退出，乐队风格由前卫摇滚转变为硬摇滚的同时也招收了现在的主音吉他、贝斯和鼓手，当初的鼓手改为节奏吉他。至此乐队正式成员到齐，并在之后与唱片公司签约发行单曲和专辑。
+</p>
+<h1>成员</h1>
+<a href="https://permanent-telex.github.io/characters/asano-rose">浅野 バラ</a> | <a href="https://permanent-telex.github.io/characters/rukousou">ルコウソウ</a> | <a href="https://permanent-telex.github.io/characters/ijichi-ringo">伊地知 りんご</a> | <a href="https://permanent-telex.github.io/characters/mikase-boke">牧濑 ボケ</a> | <a href="https://permanent-telex.github.io/characters/sanemitsu-anemone">实光 アネモネ</a>
+<h1>补充设定</h1>
+      <p>&emsp;&emsp;乐队全员的种族都是【植物妖精】，这一种族的特征是每个个体的特定身体部位会覆盖（生长）着对应其原型的植物，通常以花朵或叶片为主，终生不会枯萎。其他的则与正常人类长相无异，即使是被覆盖的身体部位也不会影响其原本的机能。<br>
+&emsp;&emsp;成员对应的植物及其部位：主唱（右侧头部/玫瑰）；主音吉他（鸢萝松/耳部）；节奏吉他（苹果花/手臂）；贝斯（木瓜花/腿部）；鼓手（银莲花/左肩至右腰的背部）。
+</p>
+      <p><a href="#">Back to top</a></p>
+    </article></main>
+  </div>
+
+  <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://www.beepbird.net/freebies/site-templates/website-templates.html">Owl</a></p>
+</footer>
+</body>
+</html>
