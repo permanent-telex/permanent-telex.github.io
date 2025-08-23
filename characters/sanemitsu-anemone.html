@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实光 アネモネ</title>
+
+  <style>
+    /* ------ COLORS ------ */
+    :root {
+      --bg: linear-gradient(0deg, #faf6fa, #f9effa 30%);
+      --bg-overlay: url("https://raw.githubusercontent.com/Permanent-Telex/img/main/cork.png");
+      --header-footer-overlay: url("https://raw.githubusercontent.com/permanent-telex/img/main/gplay.png");
+      --sidebar: #232447;
+      --sidebar-text: #feffe0;
+      --highlight: #dbd0ef;
+      --text: black;
+      --accent: #d392d5;
+      --link: #054d09;
+      --visited-link: #4b0562;
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10092a;
+        --bg-overlay: none;
+        --text: white;
+        --accent: #8f6796;
+        --highlight: #4d104a;
+        --highlighttext: #feffe0;
+        --link: #feffe0;
+        --visited-link: #eefff4;
+      }
+    }
+
+    /* ------ FONTS ------ */
+    body {
+      font-family: Dyslexie, OpenDyslexic, 'Atkinson Hyperlegible', Verdana, Ubuntu, roboto, noto, Arial, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, -apple-system, BlinkMacSystemFont, Sans-Serif;
+      font-size: 1em;
+      word-spacing: 0.05em;
+    }
+    nav {font-size: 1.2em;}
+    header h1 {
+      font-family: Dyslexie, OpenDyslexic, 'TrinitarianRhapsody', Serif;
+      word-spacing: 0.1em;
+      font-size: 2.5em;
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'TrinitarianRhapsody';
+      font-style: normal;
+      font-weight: 400;
+      src: local('TrinitarianRhapsody'),
+           url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/trinitarian-rhapsody.ttf') format('truetype');
+    }
+
+    /* ------ LAYOUT & ELEMENTS ------ */
+    body {
+      line-height: 1.6em;
+      background: var(--sidebar);
+      background-image: var(--header-footer-overlay);
+      color: var(--text);
+      margin: 0;
+    }
+    body:before {
+      content: "";
+      display: block;
+      background-image: var(--bg-overlay);
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      min-height: 100vh;
+      z-index: 9999;
+      position: fixed;
+      pointer-events: none;
+      margin: 0;
+      opacity: 0.6;
+    }
+
+    main {
+      background: var(--bg);
+      flex-basis: calc(100% - 30em - 2em);
+      margin-right: 2em;
+      flex-grow: 1;
+    }
+    .flex-columns {display: flex;}
+    article {
+      max-width: 60ch;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    header, footer {
+      background: transparent;
+      color: var(--sidebar-text);
+      margin: 0;
+      text-align: center;
+      overflow: clip;
+    }
+    header {flex-basis: 30em; max-width: 40vw;}
+    footer {padding: 1em;}
+    footer p {max-width: 65ch; margin: auto;}
+
+    h1, h2, h3, h4, h5, h6, dt {
+      background: var(--highlight);
+      padding: 0.2em;
+      border-radius: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 60% auto 0.4em auto;
+      padding: 1em 0;
+      background: rgba(0,0,0,0.4);
+      box-shadow: 0em 1.5em 1em 1em rgba(0,0,0,0.4),
+                  0em -0.5em 0.5em 0.5em rgba(0,0,0,0.4);
+    }
+    header nav ul {
+      margin: 0; padding: 0;
+      padding-bottom: 0.5em;
+      list-style-type: none;
+    }
+    header nav ul li {display: inline-block; padding: 0 0.5em;}
+
+    summary:hover {cursor: pointer;}
+    aside {border: 2px solid var(--accent); padding: 1em;}
+    dt {font-weight: bold; text-align: left; margin: 0.5em;}
+
+    a {color: var(--link);}
+    a:visited:not(header a, footer a) {color: var(--visited-link);}
+    header a, footer a {color: var(--sidebar-text);}
+    hr {border: 2px dashed var(--accent);}
+
+    ::selection, mark {
+      color: var(--highlighttext);
+      background: var(--highlight);
+      border-bottom: 1px solid var(--accent);
+    }
+    mark::selection {background: rgba(0,0,0,0.15);}
+    :focus {
+      outline: 2px solid red; border-radius: 5px; color: black;
+      background: #f9f6ff; padding: 2px;
+    }
+    #skiplink {
+      position: absolute;
+      display: inline-block;
+      margin: 0; padding: 0;
+      max-height: 1px; max-width: 1px;
+      color: transparent;
+      pointer-events: none;
+    }
+    #skiplink:focus, #skiplink:active, #skiplink:focus-visible {
+      position: absolute; left: 0; top: 0; z-index: 999;
+      background: rgba(0,0,0,0.8); border: 2px solid var(--accent);
+      max-height: 2em; max-width: 100%; color: inherit;
+      margin: 0; padding: 1em; text-align: left;
+      pointer-events: auto; font-size: 1.5em;
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      h1, h2, h3, h4, h5, h6, dt, mark {color: var(--highlighttext);}
+      mark {padding: 2px 5px;}
+    }
+    @media only screen and (max-width: 1100px) {
+      header {flex-basis: 25em;}
+    }
+    @media screen and (max-width: 950px) {
+      .flex-columns {flex-direction: column;}
+      header {padding: 1.5em 0.5em 1em 0.5em; flex-basis: 8em; max-width: 100%; overflow: visible;}
+      header h1 {padding: 0; box-shadow: none; background: none; margin-top: 0.7em;}
+      main {margin: 0; flex-basis: auto;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex-columns">
+    <header>
+      <a href="#main" id="skiplink">Skip to main content</a>
+      <h1>Sanemitsu Anemone</h1>
+      <nav aria-label="Site navigation">
+        <ul>
+          <li><a href="https://permanent-telex.github.io/worlds/">Worlds</a></li>
+          <li><a href="https://permanent-telex.github.io/characters/">Characters</a></li>
+          <li><a href="https://permanent-telex.github.io/stories/">Stories</a></li>
+          <li><a href="https://permanent-telex.github.io/others/">Others</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main"><article>
+<h1>MIDICITY</h1>
+<ul>
+          <li>曾经在诸多其他的乐队供职，但因为各种各样的原因不得不退出找下家。最终在现在的乐队成功稳定下来。</li>
+          <li>看着很酷，其实是个很傻很单纯的人。笑起来很灿烂。</li>
+          <li>呆毛据说是某种限制器，拔掉了他就会变成没有感情只有技术的超级drummer——当然是开玩笑的，真实性不可考。也有可能拔了就会死。</li>
+        </ul>
+      <p><a href="#">Back to top</a></p>
+    </article></main>
+  </div>
+
+  <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://www.beepbird.net/freebies/site-templates/website-templates.html">Owl</a></p>
+</footer>
+</body>
+</html>
