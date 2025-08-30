@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杰罗姆·瑟罗托</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>杰罗姆·瑟罗托</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+<ul>
+                <li>飘浮木。</li>
+                <li>杰罗姆出生在美国西海岸的一个中产家庭。父亲是英国人，从事着艺术行业。母亲则是美国人，是个服装设计师。他的家庭并无太大波澜，因而他的童年大部分都是平静度过的。</li>
+<li>他并不是刻板印象中那种热情抑或狂放的美国人。相反，他的性格柔和且内敛。早年的杰罗姆在学校的生活里就像是个透明人，不被关注也不被欺负，只是人群中的一个影子。但他并不在意这些，比起和看不透的他人交流，他更喜欢研究一些属于自己的、或者是自己喜欢的东西。他的头脑里总是充斥着某种天马行空的浪漫幻想。在自己喜欢的事情上，他一向干劲十足。唯有这时才能瞥见他热情阳光的一面。</li>
+<li>而他喜欢什么呢？他喜欢创作，喜欢音乐。他听闻过无数乐队从起家到走向巅峰，又或是四散离开的故事。六十年代时，许多来自英国的摇滚乐漂洋过海来到美国，而他从小相当热衷于这些音乐，尤其是The Who（他喜欢那种感觉！）。不过，后来他迷上了前卫摇滚，最为喜欢的是Pink Floyd。只是这些都是后话了。</li>
+<li>高中时期，他的父母决定搬到英国居住，于是他和家里人一起搬到了父亲的老家——牛津。那是个对他来说有些陌生的地方，但父亲的旧宅是个美丽的地方。在这里他依旧过着不温不火的生活，他依然做自己的事，在自己的房间里唱着一些歌（无论是翻唱还是自己随口编的什么），写着天马行空的文字。然而“无聊”一词一直在心中的某个角落出现，久久不去。</li>
+<li>再往后便是他如今的生活了。现在的杰罗姆在牛津的某所大学读艺术系，他有了足够多的时间和一场改变这样生活的机会。于是他频繁地出入于各种唱片店和演出现场，他所热爱的事物鲜活地出现在他眼前，如同闪耀的新星一般。要来一场巨大的改变吗？他这样问自己，也许你到了试着参与其中的时候了，去组个乐队吧，或者寻找某支需要你的乐队。</li>
+<li>而Lagrange Point给了他这个机会（尽管起源是一场机缘巧合的意外，但它就是发生了）。他喜欢如今的同伴，他作为主唱的同时也试着作为队内一个柔和的中间人，总之就是相当照顾队友……沉静的温柔，便是如此。</li>
+            </ul>
+          <h2>备注？</h2>
+            <ul>
+<li>右眼下方有泪痣。虹膜的颜色是无限接近于透明的蓝，浅到让人不禁怀疑他真的有虹膜吗？</li>
+<li>眼镜是平光镜，只是不想和别人直接视觉接触。</li>
+<li>姓氏来源于血清素（Serotonin）。</li>
+            </ul>
+
+<div class="gallery">
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_0899.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/wauydtq.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/jerome-seroto.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/1744649350668.png" alt="" title="">
+</div>
+    </div>
+
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
