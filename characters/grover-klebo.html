@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grover Klebo</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Grover Klebo</h1>
+               </div>
+      </div>
+    </div>
+
+    <div class="main">
+<p>
+&emsp;&emsp;G出生于1960年，全名为Grover Klebo。他的家乡在威斯康星州。不过，在他还是初中生的时候，他和家人搬到了西海岸居住。自此之后他便在这里生活了。<br>
+&emsp;&emsp;G的性格很内向，同时他也是一个很执着的人——他足够单纯，却是在一种负面的语境里。他喜欢文学，喜欢音乐。但他有些古怪的特质让他在学校成为了边缘人：不是他人霸凌他，而是单纯的因为他存在感稀薄到没人会和他搭话。<br>
+&emsp;&emsp;G曾经想过做一个校园枪手，他想通过这种方式让人记住他，让他不再是个透明人。说得直白些，他想博人眼球。不过最后他放弃了，这段往事的大败对他而言非常丢人。<br>
+&emsp;&emsp;八十年代初的时候，G已经是个大学生了，他就读于旧金山一所大学的文学系。他二十岁那年发生了一场大事，一场众所周知的事件。这时的G回忆起自己的中学生涯，他不应该为了被那些终究被平凡所淹没的同学记住而这么做，成为一个邪恶的枪手？他突然想到：「如果我也这样做的话……」，那么他会成为什么？成就了一个大明星，成就了自己，成为凶手，成为一个神圣的偶像制造者。他甚至可以比那凶手做的更过分。但那个能值得他这么做的人他还没有找到，怎么办呢？他只能继续等待下去了。<br>
+&emsp;&emsp;再往后的一两年里，他已经差不多到去外面的社会工作的年纪了。在这段时间里，一场新的音乐浪潮逐渐袭来，而他很显然沉迷其中。不久前的那个想法再次浮上他的脑中，因为他遇到了那个值得他这么做的人。G管他叫做K，一个可爱的、优秀的、年轻的主音吉他手。长得很符合他的喜好。无论是出于把「持续一时的喜爱」当做了「一见钟情」，亦或是出于其他理由。G很肯定这个人会成为大明星，所以G意识到自己应该行动起来了。醒来吧！他想，他的生活总是被「忽视」这个词充斥着。他该从这之中逃出去了。<br>
+<br>
+&emsp;&emsp;G开始构想他的计划……            
+</p>
+
+<div class="gallery">
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1747.png" alt="" title="">
+</div>
+    </div>
+
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
