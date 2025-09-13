@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Epiphanies</title>
+	<style>
+	:root {
+		--text: white;         /* 白色文字 */
+		--line: #ffffffCC;    /* 蓝色边框 */
+		--accent: #ffffffCC; /* 亮蓝色高亮 */
+		--bg: black;           /* 黑色背景 */
+		--fill: #111111;       /* 深灰填充 */
+	}
+
+	body { 
+		color: var(--text);
+		font-family: "SimSun", "Noto Serif SC", "STSong", serif; 
+		background-color: var(--bg);
+	}
+
+	* { 
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scrollbar-color: var(--text) var(--line);
+	}
+
+	*::-webkit-scrollbar { width: 20px; }
+	*::-webkit-scrollbar-track { background: var(--line); }
+	*::-webkit-scrollbar-thumb { background-color: var(--text); border: transparent; }
+
+	img { max-width: 100% }
+
+	nav {
+		float: left;
+		width: 15%;
+		height: 100vh;
+		position: relative;
+		background-color: var(--bg);
+	}
+
+	nav div {
+		height: fit-content;
+		width: fit-content;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -1.5vw;
+		text-align: right;
+	}
+
+	nav a {
+		display: block;
+		margin: 10px 0;
+		padding: 0;
+		font-size: 1.5em;
+		text-decoration: none;
+		color: var(--fill);
+		filter: drop-shadow(1px 1px 0 var(--line)) 
+				drop-shadow(-1px 1px 0 var(--line)) 
+				drop-shadow(0 -1px 0 var(--line)) 
+				drop-shadow(1px 0 var(--line));
+	}
+
+	nav a:hover, nav a:focus {
+		color: var(--accent);
+	}
+
+	main {
+		float:left;
+		width: 82%;
+		height: 100vh;
+		padding: 2em;
+		overflow-y: scroll;
+		background-color: var(--bg);
+	}
+
+	.container { max-width: 1500px }
+
+	section {
+		margin: 2em 0;
+		padding: 1em 2em;
+		background-color: var(--fill);
+		border: 3px solid var(--line);
+	}
+
+	.stripe {
+		float: left;
+		width: 3%;
+		height: 100vh;
+		background-color: var(--line);
+	}
+
+	hr {
+		border: none;
+		border-top: 3px solid var(--line);
+	}
+
+	header {
+		font-size: 2em;
+		margin-bottom: 2rem;
+		color: var(--accent);
+		text-shadow: 0 0 5px var(--line);
+	}
+
+	h2, h3, h4, h5, h6, p, table, details, cite, blockquote, img {
+		margin: 1rem 0;
+	}
+
+	ul, ol, dl {
+		margin: 1rem 0 1rem 2rem;
+	}
+
+	ul ul, ol ol { 
+		margin: 0 0 0 2rem;
+	}
+
+	p, table, ul, ol, dl {
+		font-size: 1rem;
+	}
+
+	a { 
+		color: var(--accent);
+		padding: 2px;
+	}
+
+	p a:hover { 
+		color: var(--bg);
+		background-color: var(--accent);
+	}
+
+	h6 { font-size: 1em; }
+	h5 { font-size: 1.25em; }
+	h4 { font-size: 1.5em; }
+	h3 { font-size: 1.75em; }
+	h2 { 
+		font-size: 2em;
+		text-align: center;
+		background-color: var(--accent);
+		color: var(--bg);
+		padding: 5px;
+	}
+
+	blockquote {
+		background-color: var(--accent);
+		color: var(--bg);
+		padding: 1em;
+	}
+
+	blockquote a, blockquote code {
+		color: var(--text);
+	}
+
+	cite { 
+		display: block;
+		text-align: right;
+	}
+
+	code, details, pre {
+		background-color: #222;
+		color: var(--accent);
+	}
+
+	code { 
+		font-family: 'Courier New', monospace; 
+		padding: 2px;
+	}
+
+	details, pre {
+		padding: 1em;
+	}
+
+	pre { overflow-x: auto; }
+
+	details p { margin: 1rem 0 1rem 2rem; }
+
+	table {	border: 3px solid var(--line); }
+	tr, td, th { border: 2px solid var(--line); }
+	td, th { padding: 3px }
+
+	figcaption { 
+		text-align: center;
+		margin: -0.5em 1em 1em 1em;
+	}
+
+	footer { 
+		font-size: 1em;
+		text-align: center;
+		background-color: var(--line); 
+		margin-top: 2em;
+		padding: 5px;
+		color: var(--bg);
+	}
+
+	footer a { color: var(--bg); }
+
+	.flex-box {
+		display:flex;
+		flex-wrap:wrap;
+		margin: -1em;
+		align-items: flex-start;
+	}
+
+	.flex-box section {
+		margin: 1em;
+	}
+
+	.full { flex: 1 1 100%;}
+	.half { flex: 1 1 calc(50% - 2em); }
+	.third { flex: 1 1 calc(33% - 2em); }
+	.twothird { flex: 1 1 calc(66% - 2em); }
+	.quarter { flex: 1 1 calc(25% - 2em); }
+	.threequarter { flex: 1 1 calc(75% - 2em); }
+
+	@media screen and (max-width: 800px){
+		nav, main, .stripe {
+			float: none;
+			width: 100%;
+			height: fit-content;
+		}
+		
+		nav { padding: 2vw }
+		
+		nav div {
+			height: fit-content;
+			width: 100%;
+			position: static;
+			transform: translateY(0);
+			text-align: right;
+		}
+		
+		nav img {
+			z-index: -1;
+			position: absolute;
+			left:0;
+			max-height: 100%;
+		}
+		
+		nav a {
+			display: inline-block;
+			margin: 5px;
+		}
+		
+		nav a::after { content: " ↗"; }
+		
+		main { 
+			overflow: auto;
+			padding: 2em 1em;
+		}
+		
+		header { 
+			text-align: center;
+			font-size: 1.5em;
+		}
+		
+		section { padding: 0 1em; }
+		
+		.stripe { height: 30px; }
+		
+		*::-webkit-scrollbar { width: 10px; }
+	}
+@font-face {
+    font-family: 'LedZeppelin';
+    src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/led-zeppelin.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 页头 h1 专用字体 */
+header h1 {
+    font-family: 'LedZeppelin', "SimSun", "Noto Serif SC", serif;
+}
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+	</style>
+</head>
+<body>
+
+<!-- Sidebar start -->
+<nav>
+
+</nav>
+
+<div class="stripe"></div>
+
+<!-- Sidebar end -->
+
+<main>
+<div class="container">
+
+<header>
+	<h1>EPIPHANIES</h1>
+</header>
+
+<section>
+	<h2>什么？！我搞摇滚乐队？</h2>
+	<p>★ 硬摇滚团体，队内由六位成员构成。</p>
+	<h3>主要角色</h3>
+<a href="https://permanent-telex.github.io/characters/lindgren-van-pelt">林德格伦·范佩特</a> | <a href="https://permanent-telex.github.io/characters/theodore-rain">西奥多·兰恩</a>
+</center>
+	</section>
+</div>
+
+<footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://ribo.zone/free/layouts/">ribo.zone</a></p>
+		</footer>
+</div>
+</main>
+
+</body>
+</html>
