@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lycoris</title>
+    <meta name="author" content="[your name here]">
+    <meta name="description" content="[write about your site here]">
+
+    <style>
+    /* ============================
+       引入自定义字体 zpix
+       ============================ */
+    @font-face {
+        font-family: 'Zpix';
+        src: url('https://permanent-telex.github.io/zpix.ttf') format('truetype');
+    }
+
+    /* ============================
+       全局颜色变量
+       ============================ */
+    :root {
+        --site-bg: url('');
+        --main-bg: url('https://raw.githubusercontent.com/permanent-telex/img/main/stars.gif');
+        --gradient-bg: linear-gradient(0deg, #0000 0%, #1c246288 33%, #18084388 90%);
+        --accent-color: violet;
+        --link-color: mediumpurple;
+        --bg-color: black;
+        --text-color: white;
+        --text-color2: white;
+        --favorite-color: darkslateblue;
+    }
+
+    * {
+        color: var(--text-color);
+        font-family: 'Zpix', Verdana, Geneva, Tahoma, sans-serif;
+        text-shadow: 2px 2px 5px var(--bg-color);
+        scrollbar-color: var(--favorite-color) var(--bg-color);
+        scrollbar-width: thin;
+    }
+
+    ::selection {
+        background: var(--favorite-color);
+        color: var(--bg-color);
+    }
+
+    html {scroll-behavior: smooth;}
+
+    body {
+        margin: 0;
+        background-color: var(--bg-color);
+        background-image: var(--site-bg);
+        background-repeat: no-repeat;
+    }
+
+    p {line-height: 1.5em;}
+
+    header > h1 {
+        margin: 1em auto;
+        max-width: 960px;
+        padding-left: 1em;
+        text-align: left;
+        color: var(--text-color2);
+    }
+
+    nav {
+        padding: 0 1em 1em 1em;
+        font-weight: bold;
+    }
+
+    nav ul {
+        max-width: 960px;
+        margin: auto;
+        line-height: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style-type: none;
+        padding-left: 0;
+        justify-content: space-evenly;
+    }
+    nav li a {
+        background-color: var(--bg-color);
+        border: 1px solid var(--favorite-color);
+        padding: .5em 3em;
+        text-decoration: none;
+        transition: color 400ms ease-out, border-color 400ms ease-out;
+    }
+    nav li a:hover {
+        border: 1px solid var(--accent-color);
+    }
+
+    a {
+        color: var(--link-color);
+        transition: color 400ms ease-out;
+    }
+    a:visited {
+        color: var(--favorite-color);
+    }
+    a:hover {
+        color: var(--text-color2);
+    }
+
+    ul { list-style-type: "✦ "; }
+
+    #sidebar {
+        background-image: var(--main-bg);
+        border: 1px solid var(--favorite-color);
+        min-width: 220px;
+    }
+
+    #avatar {
+        margin: 1em auto;
+        max-width: 164px;
+        max-height: 164px;
+    }
+    #avatar img {
+        background: var(--bg-color);
+        max-width: 160px;
+        border: 1px solid var(--favorite-color);
+        box-shadow: var(--accent-color) 0 0 4px;
+    }
+
+    #bio {
+        font-size: smaller;
+        margin: 1em;
+        background: var(--bg-color);
+        border: 1px solid var(--favorite-color);
+        box-shadow: var(--accent-color) 0 0 4px;
+    }
+    #bio p {
+        margin: 1em;
+        color: var(--text-color2);
+    }
+
+    #content {
+        display: flex;
+        max-width: 960px;
+        margin: auto;
+    }
+
+    main {
+        background-image: var(--main-bg);
+        background-repeat: repeat;
+        image-rendering: pixelated;
+        max-width: 800px;
+        margin: auto;
+        border: 1px solid darkslateblue;
+        color: var(--accent-color);
+        max-height: 600px;
+        overflow:auto;
+    }
+
+    .prose {
+        background: var(--gradient-bg);
+        margin: 0;
+        padding: 1em;
+    }
+
+    .img-right { float: right; }
+
+    footer {
+        text-align: center;
+        font-size: small;
+        padding: 1em;
+    }
+
+    @media only screen and (max-width: 800px) {
+        #content {
+            flex-wrap: wrap;
+        }
+        #sidebar {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2em;
+        }
+        #avatar {margin: 0 1em;}
+        #bio {width: 50%;}
+        #sidebar ul {   
+            margin: 0 1em;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 2em;
+            padding-left: 0;
+        }
+        #sidebar li {
+            margin: .3em 1em;
+        }
+        main {
+            max-height: fit-content;
+        }
+        .img-right {
+            float: none;
+            text-align: center;
+        }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>蔷薇狱乙女</h1>
+    </header>
+        
+    <nav>
+        <ul>
+        <li><a href="https://permanent-telex.github.io/worlds/">Worlds</a></li>
+        <li><a href="https://permanent-telex.github.io/characters/">Characters</a></li>
+        <li><a href="https://permanent-telex.github.io/stories/">Stories</a></li>
+        <li><a href="https://permanent-telex.github.io/others/">Others</a></li>
+        </ul>
+    </nav>
+        
+    <div id="content">
+        <div id="sidebar">
+            <div id="bio">
+                <p>Baldur' s Gate 3</p>
+            </div>
+            <ul>
+                <li>种族：半精灵（半高精灵）</li>
+                <li>职业：圣武士（复仇之誓）</li>
+                <li>出身：士兵</li>
+            </ul>
+        </div>   
+        
+        <main>
+            <div class="prose">
+            <ul>
+                <li>士兵出身的复仇誓言圣武士。通常他不会和队友透露太多关于他的往事的内容，可以确定的是他一路走来杀了许多恶人。也许还有一些无辜的人。</li>
+                <li>曾经的他被危险而强大的邪恶敌人悲惨地折磨，他失去了本该有的平静。为此，他离开了曾经所在的地方，立下了复仇的誓言：以不择手段的方式对抗一切邪恶。</li>
+<li>脸上的伤就是在很久以前留下的。</li>
+            </ul>
+<div class="gallery">
+  <div>
+    <img src="1234" alt="" title="">
+  </div>
+</div>
+
+                <details><summary>涉及游戏内容剧透</summary>
+
+            <ul>
+                <li>梦境访客，美丽的梦中情人。</li>
+                <li>形象本质上是来源于L心中的救赎天使的样貌。毕竟复仇者即使一路杀了许多行恶的人，也会有寻求安宁与救赎的时候。而她出现在了L的梦中，她就在这里。</li>
+<li>出乎意料的是，L真的信任她所说的话。也许是因为没有人真心对他好，而他也缺乏真诚的爱吧。</li>
+            </ul>
+
+<div class="gallery">
+  <div>
+    <img src="1234" alt="" title="">
+  </div>
+</div>
+
+
+</details>
+<center>
+                <blockquote>&emsp;&emsp;これが爱か憎しみなのか<br>
+答えは必要ですか<br>
+ああ掴まれた心臓は<br>
+あなたの氷のような指の中で生き返るわ</blockquote>
+</center>
+            </div>    
+        </main>
+    </div>
+        
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://nomnomnami.com/templates/">nomnomnami.com</a></p>
+</footer>
+</body>
+</html>
+
+
