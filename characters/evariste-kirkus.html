@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>埃瓦里斯特·科刻斯</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Queen 'Bohemian Rhapsody'</h1>
+          <p><i>Beelzebub has a devil put aside for me, for me, for me</i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>埃瓦里斯特·科刻斯</h1>
+<p><b><u>月蚀</u></b></p>
+<ul>
+                <li>CPA新人特工。</li>
+                <li>个人描述：红发的青年，头发留得略长（其实发色是玫瑰色，但这样的话说不出口吧。）。安静且刻板般的正直。APP85的超级池面人，但自己根本没有自己长得很好看的自知之明。</li>
+<li>相信道德万能论，认为道德困境总是有出路的。本质便是对这个世界怀有理想。</li>
+<li>重要之人是女朋友，他们好久没见了。他那哲学系的女朋友喜欢他充满理想的样子，这就是他们能在一起的原因。（不过说到底是他女朋友追的他吧……尽管他心怀理想却安静地不与任何人主动沟通，怎么想都不可能会主动追人。）</li>
+<li>像相信法律条文一般相信道德，如同理想主义者。但实际上道德这种东西可能并没有什么用，各种各样的事例都在证明这一点。而他仍然做一个理想主义者，相信它的意义。</li>
+<li>有一部分法国血统。</li>
+            </ul>
+
+<details><summary>涉及模组内容剧透</summary>
+
+<ul>
+<li>在先前的超自然事件里差点死掉，被邪神（别西卜）保下来了。原因是自身具有特殊体质，邪神想要用他做寄生的躯体。也因此拥有了灵视和一定程度上操作生命力的能力。</li>
+<li>追加能力：扭曲现实的能力，可以使用力量改变一定程度的现实空间。例如开锁或改变某些物件外观。</li>
+<li>现在他知道了这件事。他不怕死去，用其他能活下来的人的生命换他活下来只会让他不断自我谴责。但他也没办法随便死掉吧。</li>
+            </ul>
+</details>
+
+<details><summary>Warhammer 40k AU</summary>
+
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/l%20(77).png" alt="" title="by 莱茵" style="float: left; margin: 0 20px 20px 0; width:300px;">
+</ul>
+<li>写在前面：四舍五入我也只不过算个云锤，出于兴趣捏的这个AU。如果让你觉得不符合原作/过分美化一些内容实在是抱歉。</li>
+<li>帝国的一员，星球算是那种帝国中还算不错的类型（巢都世界？）因此过着称得上是平淡的生活。相比于其他的星球世界，他算是比较优等出身的那一档，大概是从事着文书工作一类的职业。</li>
+<li>后来他的星球发生了一场灾难，灾难导致了瘟疫，然后他是早期意外感染的其中之一（跟他同一时间感染的都死了）。在这过程中他祈求帝国的统治者能够护佑他，但是意外被N给看中了。总之就是非常能苟，并且他自己一开始对这件事不知情。所以就被赐福发生了身体上的变异，虽然和其他被赐福的普通人相比至少还保留了正常的人形和脸，但身上也快烂差不多转变成N所属的亚空间恶魔了……</li>
+</ul>
+
+<div class="gallery">
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/l0.png" alt="" title="">
+</div>
+<div>
+<img src="https://raw.githubusercontent.com/permanent-telex/img/main/adhIDPI.png" alt="" title="">
+</div>
+
+</details>
+    </div>
+
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
