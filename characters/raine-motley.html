@@ -1,87 +1,109 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="cn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>雷恩·莫特利</title>
-<style>
-/* 导入标题字体 */
-@font-face {
-    font-family: 'MotleyCrue';
-    src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/motley-crue.ttf') format('truetype');
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷恩·莫特利</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
 
-/* 全局样式 */
-body {
-    font-family: "Courier New", Courier, monospace; /* 打字机风格正文 */
-    background-color: #000; /* 黑底 */
-    color: #fff; /* 白字 */
-    margin: 0;
-    padding: 0;
-}
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
 
-/* 页面容器 */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    background-color: rgba(255, 255, 255, 0.05); /* 半透明背景 */
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    position: relative;
-}
+    b, strong { color: #c0feff; }
 
-/* 页眉标题 */
-.header {
-    font-family: 'MotleyCrue', sans-serif;
-    font-size: 3em;
-    text-transform: uppercase;
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
 
-/* 标签信息 */
-.label {
-    font-size: 0.85em;
-    color: #ccc;
-    margin-bottom: 8px;
-    display: block;
-}
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
 
-/* 正文内容 */
-.content {
-    line-height: 1.6;
-    white-space: pre-wrap;
-    font-size: 1em;
-    color: #fff;
-    background-color: rgba(255,255,255,0.05); /* 保留轻微半透明背景 */
-    padding: 15px;
-}
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
 
-/* 高亮选中文字 */
-::selection {
-    background: #fff;
-    color: #000;
-}
+    .header-gap { height: 500px; }
 
-/* 链接样式 */
-a {
-    color: #fff;
-    text-decoration: underline dotted;
-}
-a:hover {
-    color: #aaa;
-}
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
 
-/* 页脚 */
-.footer {
-    font-size: 0.75em;
-    text-align: right;
-    margin-top: 30px;
-    color: #888;
-}
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
 
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
 .gallery { /* this is the main div that wraps your gallery */
   display:flex;
   flex-wrap:wrap;
@@ -109,22 +131,46 @@ a:hover {
   transform:scale(2.5); /* this scales up the image when you hover over it */
   object-fit:contain; /* this keeps the aspect ratio of the original images*/
 }
-
-</style>
+  </style>
 </head>
 <body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
 
-<div class="container">
-  <div class="header">Raine Motley</div>
-<p><u><b>成为我的挚爱</b></u></p>
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Mötley Crüe 'Dr.Feelgood'</h1>
+          <p><i>He's the one they call Dr.Feelgood<br>He's the one that makes ya feel alright<br>He's the one they call Dr.Feelgood<br>He's gonna be your Frankenstein</i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>雷恩·莫特利</h1>
+<p><b>模组：成为我的挚爱<br>
+年龄：29<br>
+职业：药剂师<br></p>
+<h2>背景</h2>
 <p>★ 他是一个活跃于1920年代的药剂师，虽然放在现在的眼光来看称之为药物贩子才是正确的。他来自美国，后来在英国进修并定居。在这里他凭借自己的才能和没有底线混得风生水起。<br>
 ★ 假名很多，但还是在模组里面临场编了个新的。<br>
 ★ 结团后日谈最大赢家，人称英国绝命毒师。顺带给美国的某人打了友好交流电话。<br>
 &emsp;&emsp;☆ 现在他不是最大赢家了，被动强制里他是boss还被美利坚超人一枪秒了。笔者最绷不住的时刻：为什么我的旧卡会是这次的boss还换了个身份？甚至前作的另外一位也来了？<br>
-&emsp;&emsp;☆ 答案是只有笔者的卡四次团没被撕过。
-</p>
+&emsp;&emsp;☆ 答案是只有笔者的卡四次团没被撕过。</p>
+<h2>经历</h2>
+<p>我超冰</p>
+<h2>笔记</h2>
 
-
+<h2>展馆</h2>
 <details><summary>Gallery（可能包括血腥/猎奇的表现）</summary>
 <br>
 <div class="gallery">
@@ -155,27 +201,19 @@ a:hover {
 </details>
 
     <center>
-                <blockquote>He's the one they call Dr.Feelgood<br>
-He's the one that makes ya feel alright<br>
-He's the one they call Dr.Feelgood<br>
-He's gonna be your Frankenstein</blockquote>
-</center>
-    <center>
                 <img src="https://raw.githubusercontent.com/permanent-telex/img/main/Image_1758503691106.png" alt="" title="by 鸭克力" height="1000" width="675">
 <center>
 
-  <div class="footer">
-  <p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
   </div>
-</div>
 </body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
 </html>
-
-
-
-
-
-
 
 
 
