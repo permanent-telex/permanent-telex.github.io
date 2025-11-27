@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V</title>
+  <style>
+    /* ============================ BODY & BACKGROUND ============================ */
+    body {
+      background: #000;
+      background: url("https://raw.githubusercontent.com/permanent-telex/img/main/stars5.gif") ;
+      background-size: auto;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      font-family: "Droid Sans", Verdana, sans-serif;
+      line-height: 150%;
+    }
+
+    a { color: #aaf0ff; }
+    a:hover { color: #e0ffff; transition: ease-in 0.5s ease-out 0.5s; }
+
+    b, strong { color: #c0feff; }
+
+    h1, h2, h3, h4, h5, .nav { "Palatino", Garamond, serif; }
+    h1, h2, h3, h4, h5 { line-height: 125%; }
+
+    blockquote {
+      border-left: 2px solid #aaf0ff;
+      padding: 0.1px 0.75em;
+      margin-left: 1.25em;
+      background: rgba(250,255,255,0.1);
+    }
+
+    hr {
+      margin: 1.75rem 0;
+      height: 1px;
+      border:0;
+      background: #aaf0ff;
+    }
+
+    .header-gap { height: 500px; }
+
+    .page-wrapper {
+      background: rgba(0,2,2,0.7);
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .top-section, .main, .footer {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0.1px 0;
+    }
+
+    .main img, .top-section img, .footer img, .left img, .right img {
+      max-width: 100%;
+      height: auto;  
+    }
+
+    .top-section-wrapper {
+      background: rgba(0,2,2,0.7);
+      padding: 1rem 0 2rem 0;
+    }
+
+    .top-section {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .left, .right { display: inline-block; }
+    .left h1 { font-size: 1.4rem; }
+    .left h1, .right { padding-top: 1.35rem; margin-top: 0; }
+    .left p { font-size: 0.95rem; }
+    .left { width:450px; }
+    .right { float: right; }
+
+    .right .nav { max-width: 440px; text-align: right; }
+    .nav { font-size: 1.075em; }
+    .nav a { padding: 0 0.5em 0.5em 0.5em; display: inline-block; text-decoration: none; font-weight: bold; }
+
+    .main { padding: 1rem 0; }
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 1.75rem 0;
+      border-top: 1px solid #fff;
+    }
+    .footer .nav a { padding: 0 0.35em 0.35em 0.35em; }
+
+    /* ============================ RESPONSIVE ============================ */
+    @media(max-width: 920px) {
+      .top-section, .main, .footer {
+        width: calc(100vw - 2rem);
+      }
+      .left { width: 425px; }
+      .right .nav { max-width: calc(100vw - 435px - 2rem); }
+    }
+
+    @media(orientation:portrait), (max-width: 575px) {
+      .header-gap { height: 60vh; }
+      .top-section, .left, .right .nav, .main, .footer { margin:0 auto; width:auto; padding:0; }
+      .main, .top-section, .footer { margin: 0.1px 1em; }
+      .left, .right, .right .nav { display: block; text-align: center; float:none; width:100%; }
+      .right .nav { max-width: 100%; width:100%; }
+    }
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+  <span id="top"></span>
+  <div class="header-gap"></div>
+
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+        <div class="left">
+          <h1>Metallica 'Creeping Death'</h1>
+          <p><i>Die by my hand<br>I creep across the land<br>Killing first born man<br></i></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+<h1>克劳利·冻月</h1>
+<p><b>赛博朋克2077</b></p>
+<h2>背景</h2>
+<p>&emsp;&emsp;公司员工出身。年轻有为光鲜亮丽，尽可能把自己包装成像是货架上的畅销产品那样受欢迎和重视。实则他根本不知道自己想要什么，也总觉得别人瞧不起他。小心翼翼地维持着自身脆弱的地位稳固性，保持着虚假的体面。直到故事开始。
+</p>
+<h2>经历</h2>
+<p>
+&emsp;&emsp;在故事的最初被卷入公司内的争端，最后被开出了公司，从此流落到了曾经他瞧不起和恐惧的底层（他非常害怕现状的失控）。<br>
+&emsp;&emsp;在最开始的半年里曾经消沉过一段时间，虽然他深知公司法则，但真正遇到这件事的时候他依然难以接受。毕竟他维持着那脆弱的平衡，轻轻一推便会轰然倒塌，他并不愿意去真正接受这件事。直到不得不去直面它。<br>
+&emsp;&emsp;不过，当前的生活待久了之后也让他麻木了。无论说什么，他也只能这样过。他还在试图维持着那最后一丝体面，只不过也没人会在意这件事就是了。<br>
+&emsp;&emsp;在半年后的现在接到了惊天大任务，本着是个好生意的打算参与到了其中。虽说前半部分是和队友们很顺利啦……不过在荒坂那边偷Relic并不算特别顺利，甚至撞见三郎之死。Bug那边也可以说情况已经没救了。<br>
+&emsp;&emsp;一路逃跑和战斗后，他和杰克从荒坂公司逃出来，只是后者死在了逃跑的车上。Relic被转交给他，插到了自己的脑子里。（只是他在那时应该想不到后果是什么。）<br>
+&emsp;&emsp;他回到了雇主那边，但遭到对方的背刺，真真切切的死过了一次。（朱迪之前和他说真正的死比超梦里的还要痛，但他肯定没想到是如此折磨的死掉。）在幻觉亦或死后看到了一段不属于自己的记忆：一个音乐人去搞了场恐怖袭击，而这个陌生人也将在之后成为他脑子里的一个“住客”。<br>
+&emsp;&emsp;自黑梦中醒来时屈辱地在废墟里爬着寻求出路。没有什么比这更坏了，他想。如果那时候醒着的是他的话。目击了雇主被竹村带走，而他也被竹村救走。经历追逐战后到达了维克多的诊所，得到了一个难以置信的消息：尽管芯片复活了他，但Relic的性质决定了作为V的个体的“他”活不长久了。（但是他真的很想活下去，他不想就这么死。灵魂彻底被抹除实在是令人恐惧。他哭不出来，但声音还是真情实感的。）取代他的会是那个芯片里的住客——强尼·银手。<br>
+&emsp;&emsp;他开始尝试着寻求解决的办法。<br>
+&emsp;&emsp;当竹村和他提出合作的时候，他多少有些动心，那些条件足够他回到那个曾经的位置，甚至更高。但朋友的死和银手的到来让他的脑子乱成一团，他只能暂时将此事作为考虑范围内的一部分。而更多的麻烦和事件也即将到来……他会找到一条出路的，也许如此。<br>
+（未完待续）
+</p>
+<h2>笔记</h2>
+<ul>
+<li>黑客流，体质相较其他人来说稀烂。不过他的枪法多少还是有点说法的，惯用的武器是手枪。</li>
+<li>他的眼睛已经替换成了义眼，颜色和他的原生瞳色是一样的。</li>
+<li>应该是没有办法哭的……我猜，换义眼的时候就顺道摘掉了影响他维持形象的部分。</li>
+ </ul>
+<h2>播放列表</h2>
+New Order 'True Faith'<br>
+Joy Division 'Disorder'<br>
+Linkin Park 'One Step Closer'<br>
+Slipknot 'Psychosocial'<br>
+<h2>展馆</h2>
+  </div>
+</body>
+<center>
+    <footer>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</footer>
+</center>
+  </div>
+</html>
