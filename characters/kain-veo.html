@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>凯恩·维欧</title>
+  <style>
+    @font-face {
+      font-family: 'zpix';
+      src: url('https://permanent-telex.github.io/zpix.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'zpix', monospace;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+main {
+  max-width: 700px;   /* 你想要的宽度，比如700px */
+  margin: 0 auto;     /* 居中显示 */
+  padding: 20px;      /* 内边距，让文字不要贴边 */
+}
+
+.gallery { /* this is the main div that wraps your gallery */
+  display:flex;
+  flex-wrap:wrap;
+  width:800px; /* this can be modified to make the gallery wider */
+  justify-content: center;
+}
+
+.gallery img {
+  width:200px; /* this sets the width for every image */
+  height:150px; /* this sets the height for every image. Try setting it to 'auto' and see how it looks weird since every image has a slightly different height? */
+  object-fit:cover; /* this crops the image so they are all the same size. This might be an issue if you have landscape AND portrait images. Feel free to take this property out temporarily to see exactly what it does! */
+  
+}
+
+/* this is the div which CROPS every image */
+.gallery > div {
+  width:200px; /* this should match the image height */
+  height:150px; /* this should match the image width */
+  margin-right:10px; /* this controls the gaps between the images */
+  margin-bottom:10px; /* this controls the gaps between the images */
+}
+
+/* this resizes the image on hover. note that objects in 'portrait'  */
+.gallery img:hover {
+  transform:scale(2.5); /* this scales up the image when you hover over it */
+  object-fit:contain; /* this keeps the aspect ratio of the original images*/
+}
+  </style>
+</head>
+<body>
+<center>
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</center>
+<main>
+  <h1>凯恩·维欧</h1>
+  <h2>设定</h2>
+<p>&emsp;&emsp;K出生在1953年的伯明翰，来自一个普通的工人家庭。良好的家庭氛围培养出了他务实而诚挚的性格，在沟通上，K总是直接表明自己的意见。<br>
+&emsp;&emsp;在K还是中学生的年代，摇滚浪潮正在兴起。彼时的他也稍微动了些玩音乐的心思，找了一个靠谱的老师学鼓，并且和同样有所兴趣的朋友们一起拉了一个小小的team（从那时起他就是在做鼓手了）。只不过这段时间并不长，玩票性质的队伍能走长久的才是少数，最终也就以不了了之收场。<br>
+&emsp;&emsp;K虽然有些失落，但也不得不承认还是该做些正事。作为鼓手的梦想也就暂时被搁置在内心的某个角落里了。<br>
+&emsp;&emsp;再往后就到了他大约二十多岁出头，正式离开学校进入社会的时候。重金属的兴起让他重拾了一些热情，尽管暂时没有找到一个适合自己的地方，但他愿意再次为自己的梦想付出行动：至少应该先是磨练自己的技术，然后再是寻找志同道合的伙伴。不过在1985年的现在，很显然他已经两者都做到了。<br>
+&emsp;&emsp;K打鼓的水平算不上最前沿最尖端的，但这不意味着他人可以看轻他的能力。作为一个诚挚的人，他是以自己的坚守做到现在的成绩的。<br>
+&emsp;&emsp;K最喜欢Judas Priest和Iron Maiden。</p>
+
+<h3>别样的风格大战</h3>
+<details>
+ <summary>1960s ver</summary>
+  <p>彼时的K还是一个十几岁出头的伯明翰中学生。那时的英国摇滚浪潮风头正盛，他也想玩音乐了。K找了一位老师，以及一群想一起玩音乐的同学。总而言之，一身合适的行头、一套可以使用的乐器，以及诚挚的心。这就是60年代的K了。</p>
+</details>
+
+<details>
+ <summary>Glam Metal ver</summary>
+  <p>相较于享乐主义的堕落，K可以说是极其保守的一位音乐人。很显然，流行金属似乎在美国更寻常一些？K是在八十年代初从伯明翰来到了洛杉矶的。彼时的他已经不算一个初入社会的年轻人了，1980年他已经27岁了！（一个多么传奇的年龄，一切会开始或者结束。）<br>
+NWOBHM对他的影响很深，但他也对这种新兴的华丽的风格很感兴趣。这绝对不是对Heavy Metal的背叛，对吗？</p>
+</details>
+
+<details>
+ <summary>金属与地下城</summary>
+  <p>K是一个不那么擅长天马行空幻想的玩家。作为一个新人，扮演自己似乎是一个相对简单的方式。所以在第一次游玩的时候，他创造了一个白男人类战士。这不是什么都没变吗？！</p>
+</details>
+
+<div class="gallery">
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/IMG_1499.png" alt="" title="by 地狱犬振空摆">
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/permanent-telex/img/main/polm18.png" alt="" title="by 芋鼠标本6号">
+  </div>
+  <div>
+  <img src="https://raw.githubusercontent.com/permanent-telex/img/main/948b9b71842e44353acc68518283da7d_1750907218031.png" alt="" title="by 赖活着">
+  </div>
+    <div>
+<img src="https://raw.githubusercontent.com/Permanent-Telex/img/main/54ff88c6c38b8ebfba23c67a86dee0f2_1753098528159.png" alt="" title="by 超绝x">
+  </div>
+<div>
+<img src="https://raw.githubusercontent.com/Permanent-Telex/img/main/1753098737542.png" alt="" title="by 超绝x">
+</div>
+</main>
+<footer>
+<center>
+<p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+</center>
+</footer>
+</body>
+</html>
