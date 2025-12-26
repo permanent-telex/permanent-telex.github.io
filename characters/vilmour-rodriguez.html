@@ -1,187 +1,46 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>维尔莫·罗格里德兹</title>
-<style>
-/* ============================
-   字体引入
-   ============================ */
+  <meta charset="UTF-8">
+  <title>维尔莫·罗格里德兹</title>
+  <style>
 @font-face {
-  font-family: "LondonPresley";
-  src: url("https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/london-presley.ttf") format("truetype");
+  font-family: 'LondonPresley';
+  src: url('https://raw.githubusercontent.com/permanent-telex/permanent-telex.github.io/main/london-presley.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* ============================
-   全局样式
-   ============================ */
-body { 
-  background: #000;          /* 黑底 */
-  color: #fff;               /* 白字 */
-  font-family: "SimSun","宋体","Noto Serif SC",serif;
-  font-size:0.93rem;
-  line-height: 1.5;
+@font-face {
+  font-family: 'zpix';
+  src: url('https://permanent-telex.github.io/zpix.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* 标题层级 */
-h1 { 
-  font-size: 2.15rem; 
-  font-family: "LondonPresley", sans-serif; /* 使用自定义字体 */
-  color: #F6C362;                          /* 黄色标题 */
-}  
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.1rem; }
-h4 { font-size: 1rem; }
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'zpix', monospace;
+      margin: 40px;
+      line-height: 1.6;
+    }
 
-/* 主容器 */
-.main {
-  width: 750px;
-  margin: 0 auto;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'LondonPresley', cursive;
 }
 
-.title {
-  text-align: center;
-  padding: 0.1rem;
-}
-.title p { font-weight:bold; }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
 
-/* 顶部和底部的副标题栏 */
-.sub {
-  width: 100%;
-}
-.heading {
-  border-bottom:1px #fff solid;
-  border-top: 3px #fff double;
-  font-weight: bold;
-}
-.footer {
-  border-bottom: 3px #fff double;
-  border-top:1px #fff solid;
-}
-.sub-left { float: left; }
-.sub-right { text-align:right; float: right; }
-.sub-left, .sub-right {
-  padding: 0.5em 0.375em 0.2em 0.375em;
-}
-
-/* 全部大写 */
-.title, .heading, h1, h2, h3, h4, readmore, .first-word {
-  text-transform: uppercase;
-}
-
-/* 栏目布局 */
-.columns { columns: 1; }  /* 改为单栏 */
-
-/* 内容区域 */
-.articles {
-  display: block;
-  padding: 1rem 0.275rem;
-}
-.articles p {
-  text-indent: 1em;
-  line-height:1.6em;
-  margin: 0.1em;
-  text-align:justify;
-}
-.articles h1, .articles h2, .articles h3, .articles h4 {
-  margin-top:0.1em;
-  margin-bottom:0.375em;
-  display: table; /* 避免被分栏拆开 */
-}
-
-/* 插图 */
-.articles img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0.5rem auto;
-  filter: grayscale(90%);
-}
-.articles img:hover { filter: grayscale(75%); }
-
-/* 分隔线 */
-hr {
-  max-width: 750px;
-  border: 0px;
-  height: 2px;
-  background: #fff;
-  margin: 1.25rem auto;
-}
-.main hr {
-  height:1px;
-  background: #fff;
-  margin: 0.8rem 0 1rem 0;
-}
-
-/* 引用块 */
-.articles blockquote { margin:0; display: block; }
-.blockquote-inner {
-  font-weight: bold;
-  margin: 1rem 2rem;
-  display: block;
-  font-size: 1.2em;
-}
-.articles .blockquote-inner p {
-  text-indent: 0;
-  text-align: center;
-  color: #ffeb3b; /* 给引用文字一点区分色（亮黄） */
-}
-.articles blockquote:before, .articles blockquote:after {
-  font-size: 4.5rem;
-  margin: 0;
-  padding: 0 0.25rem;
-  position: relative;
-}
-.articles blockquote:before {
-  content: "“";
-  float: left;
-  top:-0.35rem;
-}
-.articles blockquote:after {
-  content: "”";
-  float: right;
-  top:-1.35rem;
-}
-
-/* 清除浮动 */
-clearfix {
-  content: "";
-  display: block;
-  clear: both;  
-  height: 0;
-}
-
-/* “continued...” */
-.articles .readmore p, .articles .continued p {  
-  font-size: 0.89em;
-  text-indent: 0;
-}
-.articles .readmore p {
-  font-weight: bold;
-  text-align: right;
-  margin: 0.5rem 0 0 0;
-}
-.articles .continued p {
-  font-style: italic;
-  margin: 0.5rem 0;
-}
-
-/* 自适配 */
-@media (max-width: 754px) {
-  .main { width: 100%; }
-  .columns { columns: 1; }
-}
-@media (max-width: 500px) {
-  h1 { font-size: 1.95rem; }  
-  h2 { font-size: 1.1rem; }
-  h3 { font-size: 0.975rem; }
-  h4 { font-size: 0.92rem; }
-  body { font-size: 0.87rem; }
-  .sub-left, .sub-right { max-width: 50%; }
-}
-@media (max-width: 400px) {
-  .columns { columns: 1; }
+main {
+  max-width: 700px;   /* 你想要的宽度，比如700px */
+  margin: 0 auto;     /* 居中显示 */
+  padding: 20px;      /* 内边距，让文字不要贴边 */
 }
 
 .gallery { /* this is the main div that wraps your gallery */
@@ -219,47 +78,38 @@ clearfix {
 .rodriguez {
   color: #519D58; /* 绿色（可调整） */
 }
-
-
-</style>
+  </style>
 </head>
 <body>
+<center>
+  <div class="page-wrapper">
+    <div class="top-section-wrapper">
+      <div class="top-section">
+        <div class="right">
+          <div class="nav" id="topnav">
+            <a href="https://permanent-telex.github.io/worlds/">Worlds</a> 
+            <a href="https://permanent-telex.github.io/characters/">Characters</a>
+            <a href="https://permanent-telex.github.io/stories/">Stories</a>
+            <a href="https://permanent-telex.github.io/others/">Others</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</center>
+<main>
+  <h1><font color= #E9979C>Vilmour</font> <font color= #519D58>Rodriguez</font></h1>
+<p>模组：开膛手安德<br>
+年龄：26（1988）<br>
+职业：艺人</p>
 
-<div class="main">
-
-<div class="title">
-  <h1>
-    <span class="vilmour">Vilmour</span>
-    <span class="rodriguez">Rodriguez</span>
-  </h1>
-</div>
-
-    
-  <div class="sub heading">
-    <div class="sub-right">August, 1988</div>
-    <clearfix></clearfix>
-  </div>
-
-  <div class="articles columns">
-    <p>
-<br>
-<b>模组：开膛手安德<br>
-年龄：26<br>
-职业：艺人</b>
-
-<h2>背景</h2>
-&emsp;&emsp;维尔莫是一个生活在英国伦敦的青年。他出生于1962年，来自一个普通的工人家庭，因而从小到大他都对所谓贵族和当权的政府缺乏好感（七十年代末之后这样的倾向愈发激进）。  <br>
+<h2>设定</h2>
+<p>&emsp;&emsp;维尔莫是一个生活在英国伦敦的青年。他出生于1962年，来自一个普通的工人家庭，因而从小到大他都对所谓贵族和当权的政府缺乏好感（七十年代末之后这样的倾向愈发激进）。  <br>
 &emsp;&emsp;他的学生生涯非常简单：成绩不上不下，勉勉强强混了个大学，但他大概读了差不多一年就退学了。考虑到他有时候的不良作风，也不算是很冤枉的情况。  <br>
-&emsp;&emsp;在那以后，他就专心去搞音乐了。几年前，在他还是个年轻的学生男孩的时候，朋克音乐的浪潮就席卷了整个英国，在那时他遇到了命中注定的偶像：The Clash，这成为了他梦想搞音乐的起源（如果一定要说最喜欢谁，他最喜欢Joe Strummer！）。他组建了一支乐队，叫做Revolution。他是其中的主唱，在八十年代努力奋斗中。这就是他的韧性吧，抗击打能力很强的朋克侠。长久以来他怀有一个梦想：我想要改变这个混乱的世界。  
+&emsp;&emsp;在那以后，他就专心去搞音乐了。几年前，在他还是个年轻的学生男孩的时候，朋克音乐的浪潮就席卷了整个英国，在那时他遇到了命中注定的偶像：The Clash，这成为了他梦想搞音乐的起源（如果一定要说最喜欢谁，他最喜欢Joe Strummer！）。他组建了一支乐队，叫做Revolution。他是其中的主唱，在八十年代努力奋斗中。这就是他的韧性吧，抗击打能力很强的朋克侠。长久以来他怀有一个梦想：我想要改变这个混乱的世界。</p>
 
 <h2>经历</h2>
-&emsp;&emsp;在模组里当调查糕首，到处捡到熟人然后寻找线索。虽然他不信任无能的官方，但更讨厌不把人命当回事的凶手，所以他和自己当年同窗的现在是警察的朋友合作了。去探访案件相关人的时候他自称社会活动人士，虽然四舍五入是这样……但参与到此事的调查也只是他个人的想法罢了。  <br>
-&emsp;&emsp;在模组的最后实现完美的Happy Ending。案件解决了专辑大卖了，神话内容一点没碰到。
-
-<h2>笔记</h2>
-<ul>
-<li>其实他真的不会吉他。</li>
-</ul>
+<p>&emsp;&emsp;在模组里当调查糕首，到处捡到熟人然后寻找线索。虽然他不信任无能的官方，但更讨厌不把人命当回事的凶手，所以他和自己当年同窗的现在是警察的朋友合作了。去探访案件相关人的时候他自称社会活动人士，虽然四舍五入是这样……但参与到此事的调查也只是他个人的想法罢了。  <br>
+&emsp;&emsp;在模组的最后实现完美的Happy Ending。案件解决了专辑大卖了，神话内容一点没碰到。</p>
 
 <h2>展馆</h2>
 </p>
@@ -307,25 +157,11 @@ clearfix {
 <div>
 <img src="https://www1.flightrising.com/rendern/350/957348/95734725_350.png" alt="" title="Flight Rising Adopt">
 </div>
-</div>
-  <div class="sub footer">
-    <footer>
+</main>
+<footer>
+<center>
 <p>© All rights reserved to EclipseA　2016 - <script type="text/javascript">document.write(new Date().getFullYear());</script></p>
-<p>layout by <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org</a></p>
+</center>
 </footer>
-    <clearfix></clearfix>
-  </div>
-
-</div>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
